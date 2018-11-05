@@ -1,0 +1,89 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/19/2018  19:07:10  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE aufg1.obj TO ueb_00 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  aufg1.obj (AUFG1)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  ueb_00 (AUFG1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     000CH     UNIT         ?C_C51STARTUP
+            CODE    080CH     0006H     UNIT         ?PR?MAIN?AUFG1
+
+
+
+OVERLAY MAP OF MODULE:   ueb_00 (AUFG1)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?AUFG1
+
+?PR?MAIN?AUFG1                 0008H    0002H
+
+
+
+SYMBOL TABLE OF MODULE:  ueb_00 (AUFG1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        AUFG1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00A8H         PUBLIC        IEN0
+  D:00B8H         PUBLIC        IPL0
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/19/2018  19:07:10  PAGE 2
+
+
+  D:00D8H         PUBLIC        CCON
+  C:080CH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00F8H         PUBLIC        UEPINT
+  D:00C8H         PUBLIC        T2CON
+  B:0090H.0       PUBLIC        ausgang
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:080CH         LINE#         7
+  C:080CH         LINE#         8
+  C:080CH         LINE#         11
+  C:080EH         LINE#         13
+  C:0810H         LINE#         14
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        AUFG1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0006H BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=11.0 xdata=0 code=21
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

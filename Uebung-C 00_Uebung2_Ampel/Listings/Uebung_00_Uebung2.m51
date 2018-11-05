@@ -1,0 +1,232 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/20/2018  12:29:44  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Ampel2.obj TO .\Objects\Uebung_00_Uebung2 PRINT (.\Listings\Uebung_00_Uebung2.m51)
+>>  RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Ampel2.obj (AMPEL2)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\Uebung_00_Uebung2 (AMPEL2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?AMPEL2
+                    000CH     0014H                  *** GAP ***
+            BIT     0020H.0   0000H.2   UNIT         ?BI?AMPEL2
+                    0020H.2   0000H.6                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+                    0006H     0005H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     0005H                  *** GAP ***
+            CODE    0013H     0003H     ABSOLUTE     
+                    0016H     07EAH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0043H     UNIT         ?PR?SIDE_ROAD_1?AMPEL2
+            CODE    08CFH     0043H     UNIT         ?PR?SIDE_ROAD_2?AMPEL2
+            CODE    0912H     003EH     UNIT         ?PR?CYCLE?AMPEL2
+            CODE    0950H     002AH     UNIT         ?PR?TIMER_0?AMPEL2
+            CODE    097AH     001BH     UNIT         ?PR?INIT?AMPEL2
+            CODE    0995H     000DH     UNIT         ?PR?_DELAY?AMPEL2
+            CODE    09A2H     0009H     UNIT         ?C_INITSEG
+            CODE    09ABH     0005H     UNIT         ?PR?MAIN?AMPEL2
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Uebung_00_Uebung2 (AMPEL2)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?SIDE_ROAD_1?AMPEL2
+  +--> ?PR?CYCLE?AMPEL2
+
+?PR?CYCLE?AMPEL2
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/20/2018  12:29:44  PAGE 2
+
+
+  +--> ?PR?_DELAY?AMPEL2
+
+*** NEW ROOT ***************************************************
+
+?PR?SIDE_ROAD_2?AMPEL2
+  +--> ?PR?CYCLE?AMPEL2
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?AMPEL2
+  +--> ?C_INITSEG
+
+?PR?MAIN?AMPEL2
+  +--> ?PR?INIT?AMPEL2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Uebung_00_Uebung2 (AMPEL2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        AMPEL2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IEN0
+  C:0999H         PUBLIC        _delay
+  C:0912H         PUBLIC        cycle
+  D:00B8H         PUBLIC        IPL0
+  B:0090H.4       PUBLIC        side_green
+  B:0090H.1       PUBLIC        main_green
+  D:0008H         PUBLIC        delay_time
+  D:00D8H         PUBLIC        CCON
+  C:09ABH         PUBLIC        main
+  B:0090H.2       PUBLIC        side_yellow
+  B:0090H.3       PUBLIC        main_yellow
+  C:0950H         PUBLIC        timer_0
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:097AH         PUBLIC        init
+  B:0020H.0       PUBLIC        wait
+  C:088CH         PUBLIC        side_road_1
+  C:08CFH         PUBLIC        side_road_2
+  B:0090H.0       PUBLIC        side_red
+  B:0090H.5       PUBLIC        main_red
+  B:0020H.1       PUBLIC        busy
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/20/2018  12:29:44  PAGE 3
+
+
+  B:00A8H.2       PUBLIC        EX1
+  B:0088H.2       PUBLIC        IT1
+  B:00B0H.2       PUBLIC        sensor1
+  B:00B0H.3       PUBLIC        sensor2
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  D:000AH         PUBLIC        one_mill_sec_counter
+  D:00F8H         PUBLIC        UEPINT
+  D:00C8H         PUBLIC        T2CON
+  -------         PROC          SIDE_ROAD_1
+  C:088CH         LINE#         26
+  C:08A9H         LINE#         27
+  C:08AFH         LINE#         28
+  C:08B2H         LINE#         29
+  C:08B4H         LINE#         30
+  -------         ENDPROC       SIDE_ROAD_1
+  -------         PROC          SIDE_ROAD_2
+  C:08CFH         LINE#         32
+  C:08ECH         LINE#         33
+  C:08F2H         LINE#         34
+  C:08F5H         LINE#         35
+  C:08F7H         LINE#         36
+  -------         ENDPROC       SIDE_ROAD_2
+  -------         PROC          TIMER_0
+  C:0950H         LINE#         38
+  C:0952H         LINE#         40
+  C:095AH         LINE#         41
+  C:0960H         LINE#         42
+  C:0965H         LINE#         44
+  C:096DH         LINE#         45
+  C:0973H         LINE#         46
+  C:0975H         LINE#         47
+  C:0977H         LINE#         48
+  C:0977H         LINE#         49
+  C:0977H         LINE#         50
+  -------         ENDPROC       TIMER_0
+  -------         PROC          MAIN
+  C:09ABH         LINE#         52
+  C:09ABH         LINE#         53
+  C:09AEH         LINE#         54
+  -------         ENDPROC       MAIN
+  -------         PROC          INIT
+  C:097AH         LINE#         57
+  C:097AH         LINE#         59
+  C:097DH         LINE#         62
+  C:097FH         LINE#         63
+  C:0982H         LINE#         64
+  C:0985H         LINE#         65
+  C:0988H         LINE#         68
+  C:098AH         LINE#         69
+  C:098CH         LINE#         70
+  C:098EH         LINE#         71
+  C:0990H         LINE#         74
+  C:0992H         LINE#         76
+  C:0994H         LINE#         77
+  -------         ENDPROC       INIT
+  C:0995H         SYMBOL        L?0023
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/20/2018  12:29:44  PAGE 4
+
+
+  -------         PROC          L?0022
+  -------         ENDPROC       L?0022
+  C:0995H         SYMBOL        L?0023
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        arg
+  C:0999H         LINE#         79
+  C:0999H         LINE#         80
+  C:099DH         LINE#         81
+  C:099FH         LINE#         82
+  C:09A1H         LINE#         83
+  -------         ENDPROC       _DELAY
+  -------         PROC          CYCLE
+  C:0912H         LINE#         85
+  C:0912H         LINE#         86
+  C:0914H         LINE#         87
+  C:0916H         LINE#         88
+  C:0918H         LINE#         89
+  C:091AH         LINE#         90
+  C:091CH         LINE#         92
+  C:091FH         LINE#         93
+  C:0922H         LINE#         94
+  C:0924H         LINE#         95
+  C:0926H         LINE#         96
+  C:0928H         LINE#         97
+  C:092AH         LINE#         99
+  C:092DH         LINE#         100
+  C:0930H         LINE#         101
+  C:0932H         LINE#         102
+  C:0934H         LINE#         103
+  C:0936H         LINE#         104
+  C:0938H         LINE#         106
+  C:093BH         LINE#         107
+  C:093EH         LINE#         108
+  C:0940H         LINE#         109
+  C:0942H         LINE#         110
+  C:0944H         LINE#         111
+  C:0946H         LINE#         113
+  C:094DH         LINE#         114
+  C:094FH         LINE#         115
+  -------         ENDPROC       CYCLE
+  -------         ENDMOD        AMPEL2
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 012CH BYTE (14%) *
+******************************************************************************
+
+Program Size: data=13.2 xdata=0 code=444
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

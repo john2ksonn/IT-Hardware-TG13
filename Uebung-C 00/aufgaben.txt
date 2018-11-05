@@ -1,0 +1,7 @@
+# Aufgaben
+
+## 1
+### a
+	6 bytes (0x080C bis 0x0810)
+### b
+	
