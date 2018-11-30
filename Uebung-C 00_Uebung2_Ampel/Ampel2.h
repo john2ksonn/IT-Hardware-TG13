@@ -1,7 +1,7 @@
 //Ampel2.h
 
 #define true 1
-#define false 0
+#define false !true
 
 #define traffic_lights = P1
 

@@ -1,0 +1,265 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/01/2018  00:11:34  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE Codeschloss.obj TO Codeschloss RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Codeschloss.obj (CODESCHLOSS)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  Codeschloss (CODESCHLOSS)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         ?DT?CODESCHLOSS
+                    001CH     0004H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?CODESCHLOSS
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     009CH     UNIT         ?PR?SHOWNUMBER?CODESCHLOSS
+            CODE    089CH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0928H     0085H     UNIT         ?PR?LOOP?CODESCHLOSS
+            CODE    09ADH     0033H     UNIT         ?PR?CHECKCODE?CODESCHLOSS
+            CODE    09E0H     002CH     UNIT         ?PR?BLINKLEDS?CODESCHLOSS
+            CODE    0A0CH     002AH     UNIT         ?PR?TIMER_0?CODESCHLOSS
+            CODE    0A36H     0028H     UNIT         ?PR?OPENLOCK?CODESCHLOSS
+            CODE    0A5EH     0020H     UNIT         ?PR?_DELAY?CODESCHLOSS
+            CODE    0A7EH     001FH     UNIT         ?C_INITSEG
+            CODE    0A9DH     0018H     UNIT         ?PR?INIT?CODESCHLOSS
+            CODE    0AB5H     0008H     UNIT         ?PR?MAIN?CODESCHLOSS
+
+
+
+OVERLAY MAP OF MODULE:   Codeschloss (CODESCHLOSS)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?CODESCHLOSS
+  +--> ?C_INITSEG
+
+?PR?MAIN?CODESCHLOSS
+  +--> ?PR?INIT?CODESCHLOSS
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/01/2018  00:11:34  PAGE 2
+
+
+  +--> ?PR?LOOP?CODESCHLOSS
+
+?PR?LOOP?CODESCHLOSS
+  +--> ?PR?_DELAY?CODESCHLOSS
+  +--> ?PR?CHECKCODE?CODESCHLOSS
+  +--> ?PR?OPENLOCK?CODESCHLOSS
+  +--> ?PR?BLINKLEDS?CODESCHLOSS
+  +--> ?PR?SHOWNUMBER?CODESCHLOSS
+
+?PR?OPENLOCK?CODESCHLOSS
+  +--> ?PR?_DELAY?CODESCHLOSS
+
+?PR?BLINKLEDS?CODESCHLOSS
+  +--> ?PR?_DELAY?CODESCHLOSS
+
+
+
+SYMBOL TABLE OF MODULE:  Codeschloss (CODESCHLOSS)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CODESCHLOSS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:09ADH         PUBLIC        checkCode
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:0008H         PUBLIC        counter
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IEN0
+  C:0A72H         PUBLIC        _delay
+  D:000AH         PUBLIC        digit
+  D:00B8H         PUBLIC        IPL0
+  D:000CH         PUBLIC        delay_time
+  D:00D8H         PUBLIC        CCON
+  C:0AB5H         PUBLIC        main
+  C:0800H         PUBLIC        showNumber
+  C:0A0CH         PUBLIC        timer_0
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:0A9DH         PUBLIC        init
+  B:0020H.0       PUBLIC        wait
+  C:0928H         PUBLIC        loop
+  C:0A36H         PUBLIC        openLock
+  B:00A8H.1       PUBLIC        ET0
+  D:000EH         PUBLIC        lockcode
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:00B0H.0       PUBLIC        button1
+  B:00B0H.1       PUBLIC        button2
+  B:0088H.4       PUBLIC        TR0
+  D:0014H         PUBLIC        one_mill_sec_counter
+  D:00F8H         PUBLIC        UEPINT
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/01/2018  00:11:34  PAGE 3
+
+
+  C:09E0H         PUBLIC        blinkLEDs
+  B:0080H.0       PUBLIC        led1
+  D:00C8H         PUBLIC        T2CON
+  B:0080H.1       PUBLIC        led2
+  B:0080H.2       PUBLIC        led3
+  B:0080H.3       PUBLIC        led4
+  B:0080H.4       PUBLIC        led5
+  B:0080H.5       PUBLIC        led6
+  B:0080H.6       PUBLIC        led7
+  B:0080H.7       PUBLIC        led8
+  D:0016H         PUBLIC        tmp_lockcode
+  -------         PROC          TIMER_0
+  C:0A0CH         LINE#         20
+  C:0A0EH         LINE#         22
+  C:0A16H         LINE#         23
+  C:0A1CH         LINE#         24
+  C:0A21H         LINE#         26
+  C:0A29H         LINE#         27
+  C:0A2FH         LINE#         28
+  C:0A31H         LINE#         29
+  C:0A33H         LINE#         30
+  C:0A33H         LINE#         31
+  C:0A33H         LINE#         32
+  -------         ENDPROC       TIMER_0
+  -------         PROC          MAIN
+  C:0AB5H         LINE#         34
+  C:0AB5H         LINE#         35
+  C:0AB8H         LINE#         36
+  C:0AB8H         LINE#         37
+  C:0ABBH         LINE#         38
+  -------         ENDPROC       MAIN
+  -------         PROC          INIT
+  C:0A9DH         LINE#         41
+  C:0A9DH         LINE#         42
+  C:0A9FH         LINE#         43
+  C:0AA1H         LINE#         44
+  C:0AA3H         LINE#         45
+  C:0AA5H         LINE#         48
+  C:0AA7H         LINE#         49
+  C:0AAAH         LINE#         50
+  C:0AADH         LINE#         51
+  C:0AB0H         LINE#         52
+  C:0AB2H         LINE#         53
+  C:0AB4H         LINE#         54
+  -------         ENDPROC       INIT
+  -------         PROC          LOOP
+  C:0928H         LINE#         56
+  C:0928H         LINE#         57
+  C:092BH         LINE#         58
+  C:0932H         LINE#         59
+  C:093FH         LINE#         60
+  C:0947H         LINE#         61
+  C:0949H         LINE#         63
+  C:094EH         LINE#         64
+  C:094EH         LINE#         65
+  C:0951H         LINE#         66
+  C:0958H         LINE#         67
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/01/2018  00:11:34  PAGE 4
+
+
+  C:0964H         LINE#         68
+  C:096CH         LINE#         69
+  C:0971H         LINE#         70
+  C:0979H         LINE#         71
+  C:0985H         LINE#         72
+  C:098AH         LINE#         73
+  C:098EH         LINE#         74
+  C:0995H         LINE#         75
+  C:099AH         LINE#         77
+  C:099DH         LINE#         78
+  C:09AAH         LINE#         79
+  C:09AAH         LINE#         80
+  C:09AAH         LINE#         81
+  -------         ENDPROC       LOOP
+  -------         PROC          L?0053
+  -------         ENDPROC       L?0053
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        arg
+  C:0A72H         LINE#         85
+  C:0A72H         LINE#         86
+  C:0A76H         LINE#         87
+  C:0A78H         LINE#         88
+  C:0A7AH         LINE#         89
+  C:0A7DH         LINE#         90
+  -------         ENDPROC       _DELAY
+  -------         PROC          SHOWNUMBER
+  C:0800H         LINE#         92
+  C:0800H         LINE#         93
+  C:0814H         LINE#         94
+  C:0828H         LINE#         95
+  C:083CH         LINE#         96
+  C:0850H         LINE#         97
+  C:0864H         LINE#         98
+  C:0878H         LINE#         99
+  C:088CH         LINE#         100
+  C:089BH         LINE#         101
+  -------         ENDPROC       SHOWNUMBER
+  -------         PROC          CHECKCODE
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:09ADH         LINE#         103
+  C:09ADH         LINE#         105
+  C:09B0H         LINE#         106
+  C:09CCH         LINE#         107
+  C:09DBH         LINE#         108
+  C:09DFH         LINE#         109
+  -------         ENDPROC       CHECKCODE
+  -------         PROC          OPENLOCK
+  C:0A36H         LINE#         111
+  C:0A36H         LINE#         112
+  C:0A46H         LINE#         113
+  C:0A4DH         LINE#         114
+  C:0A5DH         LINE#         115
+  -------         ENDPROC       OPENLOCK
+  -------         PROC          BLINKLEDS
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/01/2018  00:11:34  PAGE 5
+
+
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:09E0H         LINE#         117
+  C:09E0H         LINE#         119
+  C:09E0H         LINE#         120
+  C:09E3H         LINE#         121
+  C:09E6H         LINE#         122
+  C:09F6H         LINE#         123
+  C:09FDH         LINE#         124
+  C:09FDH         LINE#         125
+  C:0A00H         LINE#         126
+  C:0A0BH         LINE#         127
+  -------         ENDPROC       BLINKLEDS
+  -------         ENDMOD        CODESCHLOSS
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0233H BYTE (27%) *
+******************************************************************************
+
+Program Size: data=29.1 xdata=0 code=707
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

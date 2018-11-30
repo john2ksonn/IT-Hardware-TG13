@@ -3,7 +3,6 @@
 #include <Ampel2.h>
 #include <AT89C5131.h>
 
-bit wait = false; //wait for a delay
 bit busy = false; //the cpu is busy performing the cycle
 unsigned int one_mill_sec_counter = 2;
 unsigned int delay_time; //time in milliseconds to wait
@@ -24,15 +23,15 @@ sbit sensor1 = P3^2;
 sbit sensor2 = P3^3;
 
 void side_road_1() interrupt 0 {
-	if(!wait && !busy)
+	if(!TR0 && !busy)
 		cycle();
 	sensor1 = 1;
 }
 
 void side_road_2() interrupt 2 {
-	if(!wait && !busy)
+	if(!TR0 && !busy)
 		cycle();
-	sensor2 = true;
+	sensor2 = 1;
 }
 
 void timer_0() interrupt 1 {
@@ -43,7 +42,6 @@ void timer_0() interrupt 1 {
 		//...decrease the delay_time and check if it is zero
 		delay_time--;
 		if(delay_time == 0){
-			wait = false;
 			TR0 = false;
 		}
 	}
@@ -79,7 +77,6 @@ void init() {
 void delay (int arg) {
 	delay_time = arg;
 	TR0 = true;
-	wait = true;
 }
 
 void cycle() {
@@ -90,21 +87,21 @@ void cycle() {
 	side_red = false;
 	//delay(1000); //wait 1000 milliseconds
 	delay(1);
-	while(wait);
+	while(TR0);
 	main_red = true;
 	main_yellow = false;
 	side_green = true;
 	side_yellow = false;
 	//delay(3000); //wait 3000 milliseconds
 	delay(1);
-	while(wait);
+	while(TR0);
 	side_yellow = true;
 	side_green = false;
 	main_yellow = true;
 	main_red = false;
 	//delay(1000); //wait 1000 milliseconds
 	delay(1);
-	while(wait);
+	while(TR0);
 	side_red = true;
 	side_yellow = false;
 	main_green = true;
