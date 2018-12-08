@@ -11,3 +11,6 @@ Startup? -> Nein
 
 * Reiter "Memory 1" vom Fenster unten rechts öffnen
 * "c:0" in Leiste eingeben ('0' entspricht der Adresse)
+
+### Wichtig
+include <AT89C5131.h>
