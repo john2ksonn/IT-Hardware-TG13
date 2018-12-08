@@ -32,9 +32,9 @@ void init() {
 	//init both timers in mode1 (16 bit) 
 	TMOD = 0x11; //0b00010001
 	
-	//init both timers with 1ms
-	TL0 = 0x03;
-	TH0 = 0xE8;
+	//init both timers with 1ms //TODO which one is msb and which one is lsb (dont forget the reolads)
+	TL0 = 0x18;
+	TH0 = 0xfc;
 	TL1 = TL0;
 	TL1 = TH0;
 	

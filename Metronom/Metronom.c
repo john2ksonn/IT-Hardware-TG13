@@ -32,8 +32,8 @@ void timer0() interrupt 1 {
 		outPin = LOW;
 	}
 	//reload
-	TL0 = 0x03;
-	TH0 = 0xE8;
+	TL0 = 0x18;
+	TH0 = 0xfc;;
 }
 
 void timer1() interrupt 3 {
@@ -78,6 +78,10 @@ void timer1() interrupt 3 {
 		else
 			setBPM(bpm + diff);
 	}
+	
+	//reload
+	TL0 = 0x18;
+	TH0 = 0xfc;
 }
 
 void main() {
