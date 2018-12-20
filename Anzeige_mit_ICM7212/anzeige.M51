@@ -1,0 +1,94 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/11/2018  14:54:01  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE anzeige.obj TO anzeige RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  anzeige.obj (ANZEIGE)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  anzeige (ANZEIGE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         ?DT?ANZEIGE
+            IDATA   0010H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     003AH     UNIT         ?PR?MAIN?ANZEIGE
+            CODE    08C6H     000BH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   anzeige (ANZEIGE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?ANZEIGE
+  +--> ?C_INITSEG
+
+
+
+SYMBOL TABLE OF MODULE:  anzeige (ANZEIGE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ANZEIGE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00A8H         PUBLIC        IEN0
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/11/2018  14:54:01  PAGE 2
+
+
+  D:00B8H         PUBLIC        IPL0
+  B:0080H.0       PUBLIC        displayPort
+  D:00D8H         PUBLIC        CCON
+  C:088CH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00F8H         PUBLIC        UEPINT
+  D:00C8H         PUBLIC        T2CON
+  D:0008H         PUBLIC        z
+  -------         PROC          MAIN
+  -------         DO            
+  D:0002H         SYMBOL        i
+  D:0006H         SYMBOL        output
+  -------         ENDDO         
+  C:088CH         LINE#         10
+  C:088CH         LINE#         13
+  C:088CH         LINE#         14
+  C:088FH         LINE#         15
+  C:08A4H         LINE#         16
+  C:08B3H         LINE#         17
+  C:08B9H         LINE#         18
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ANZEIGE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0044H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=17.0 xdata=0 code=212
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

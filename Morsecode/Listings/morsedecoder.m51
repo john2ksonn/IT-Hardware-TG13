@@ -1,0 +1,338 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/20/2018  21:35:24  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\morsedecoder.obj TO .\Objects\morsedecoder PRINT (.\Listings\morsedecoder.m51) RAM
+>> SIZE (256)
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\morsedecoder.obj (MORSEDECODER)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPADD)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FCAST)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?CASTF)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (POW)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?CHKFLOAT)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPCMP)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPNEG)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (EXP)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (LOG)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPDIV)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPSERIES)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?IMUL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LNEG)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDCODE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDCODE0)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0010H     UNIT         _DATA_GROUP_
+                    0018H     0008H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.1   0000H.7                *** GAP ***
+            DATA    0021H     004EH     UNIT         ?DT?MORSEDECODER
+            IDATA   006FH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+                    0006H     0005H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     048EH     UNIT         ?C?LIB_CODE
+            CODE    0C8EH     0135H     UNIT         ?PR?LOG?LOG
+            CODE    0DC3H     0117H     UNIT         ?PR?_POW?POW
+            CODE    0EDAH     00FCH     UNIT         ?PR?EXT_INT_0?MORSEDECODER
+            CODE    0FD6H     00B1H     UNIT         ?PR?_ADD_ELEMENT?MORSEDECODER
+            CODE    1087H     009AH     UNIT         ?PR?EXP?EXP
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/20/2018  21:35:24  PAGE 2
+
+
+            CODE    1121H     008CH     UNIT         ?C_C51STARTUP
+            CODE    11ADH     0062H     UNIT         ?C_INITSEG
+            CODE    120FH     002CH     UNIT         ?PR?INIT?MORSEDECODER
+            CODE    123BH     001FH     UNIT         ?PR?TIMER_0?MORSEDECODER
+            CODE    125AH     001EH     UNIT         ?PR?FINISH_CHAR?MORSEDECODER
+            CODE    1278H     0012H     UNIT         ?PR?RESET_TIMER0?MORSEDECODER
+            CODE    128AH     0005H     UNIT         ?PR?MAIN?MORSEDECODER
+            CODE    128FH     0003H     UNIT         ?PR?_DISPLAY_CHAR?MORSEDECODER
+            CODE    1292H     0003H     UNIT         ?PR?_DISPLAY_ELEMENT?MORSEDECODER
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\morsedecoder (MORSEDECODER)
+
+
+SEGMENT                                      BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                     START    LENGTH     START    LENGTH
+-----------------------------------------------------------------------------
+?PR?EXT_INT_0?MORSEDECODER                -----    -----      -----    -----
+  +--> ?PR?_ADD_ELEMENT?MORSEDECODER
+  +--> ?PR?FINISH_CHAR?MORSEDECODER
+  +--> ?PR?_DISPLAY_CHAR?MORSEDECODER
+  +--> ?PR?RESET_TIMER0?MORSEDECODER
+
+?PR?_ADD_ELEMENT?MORSEDECODER             -----    -----      0008H    0002H
+  +--> ?PR?_POW?POW
+  +--> ?PR?_DISPLAY_ELEMENT?MORSEDECODER
+
+?PR?_POW?POW                              -----    -----      000AH    000AH
+  +--> ?PR?LOG?LOG
+  +--> ?PR?EXP?EXP
+
+?PR?LOG?LOG                               0020H.0  0000H.1    0014H    0004H
+
+?PR?FINISH_CHAR?MORSEDECODER              -----    -----      -----    -----
+  +--> ?PR?_DISPLAY_CHAR?MORSEDECODER
+
+?PR?_DISPLAY_CHAR?MORSEDECODER            -----    -----      0008H    0001H
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                             -----    -----      -----    -----
+  +--> ?PR?MAIN?MORSEDECODER
+  +--> ?C_INITSEG
+
+?PR?MAIN?MORSEDECODER                     -----    -----      -----    -----
+  +--> ?PR?INIT?MORSEDECODER
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MORSEDECODER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/20/2018  21:35:24  PAGE 3
+
+
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  C:125AH         PUBLIC        finish_char
+  B:00A8H.7       PUBLIC        EA
+  D:0021H         PUBLIC        lastpos
+  D:00A8H         PUBLIC        IEN0
+  D:0023H         PUBLIC        milliseconds
+  C:0EDAH         PUBLIC        ext_int_0
+  D:00B8H         PUBLIC        IPL0
+  D:0025H         PUBLIC        char_index
+  D:00D8H         PUBLIC        CCON
+  C:128AH         PUBLIC        main
+  D:0027H         PUBLIC        prior_options_count
+  D:0029H         PUBLIC        power
+  C:123BH         PUBLIC        timer_0
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:120FH         PUBLIC        init
+  D:002BH         PUBLIC        last_state
+  B:00A8H.1       PUBLIC        ET0
+  B:00B0H.2       PUBLIC        key
+  C:1292H         PUBLIC        _display_element
+  D:008CH         PUBLIC        TH0
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  D:00F8H         PUBLIC        UEPINT
+  C:1278H         PUBLIC        reset_timer0
+  D:002DH         PUBLIC        overflow_counter
+  D:002FH         PUBLIC        dit_len
+  D:00C8H         PUBLIC        T2CON
+  C:0FD6H         PUBLIC        _add_element
+  D:0031H         PUBLIC        morsecodetree
+  C:128FH         PUBLIC        _display_char
+  -------         PROC          INIT
+  C:120FH         LINE#         25
+  C:120FH         LINE#         32
+  C:1227H         LINE#         37
+  C:1229H         LINE#         39
+  C:122CH         LINE#         41
+  C:122FH         LINE#         42
+  C:1232H         LINE#         44
+  C:1234H         LINE#         49
+  C:1236H         LINE#         51
+  C:1238H         LINE#         54
+  C:123AH         LINE#         55
+  -------         ENDPROC       INIT
+  -------         PROC          EXT_INT_0
+  C:0EDAH         LINE#         7
+  C:0EF7H         LINE#         9
+  C:0F00H         LINE#         11
+  C:0F1CH         LINE#         12
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/20/2018  21:35:24  PAGE 4
+
+
+  C:0F1FH         LINE#         13
+  C:0F21H         LINE#         15
+  C:0F44H         LINE#         16
+  C:0F4BH         LINE#         17
+  C:0F4BH         LINE#         18
+  C:0F4DH         LINE#         20
+  C:0F58H         LINE#         22
+  C:0F7BH         LINE#         23
+  C:0F7EH         LINE#         24
+  C:0F80H         LINE#         26
+  C:0FA3H         LINE#         27
+  C:0FA6H         LINE#         28
+  C:0FABH         LINE#         29
+  C:0FABH         LINE#         30
+  C:0FABH         LINE#         31
+  C:0FAEH         LINE#         32
+  C:0FB0H         LINE#         33
+  C:0FB9H         LINE#         34
+  C:0FBBH         LINE#         35
+  -------         ENDPROC       EXT_INT_0
+  -------         PROC          TIMER_0
+  C:123BH         LINE#         37
+  C:123DH         LINE#         38
+  C:1245H         LINE#         39
+  C:124BH         LINE#         40
+  C:124FH         LINE#         41
+  C:1257H         LINE#         42
+  C:1257H         LINE#         43
+  -------         ENDPROC       TIMER_0
+  -------         PROC          MAIN
+  C:128AH         LINE#         11
+  C:128AH         LINE#         12
+  C:128DH         LINE#         13
+  -------         ENDPROC       MAIN
+  -------         PROC          RESET_TIMER0
+  C:1278H         LINE#         16
+  C:1278H         LINE#         18
+  C:127AH         LINE#         20
+  C:127DH         LINE#         21
+  C:1280H         LINE#         22
+  C:1285H         LINE#         23
+  C:1289H         LINE#         24
+  -------         ENDPROC       RESET_TIMER0
+  -------         PROC          _ADD_ELEMENT
+  D:0008H         SYMBOL        element
+  C:0FD6H         LINE#         28
+  C:0FDAH         LINE#         29
+  C:1017H         LINE#         30
+  C:1023H         LINE#         31
+  C:102FH         LINE#         32
+  C:103CH         LINE#         33
+  C:1044H         LINE#         34
+  C:1080H         LINE#         35
+  -------         ENDPROC       _ADD_ELEMENT
+  -------         PROC          FINISH_CHAR
+  C:125AH         LINE#         38
+  C:125AH         LINE#         39
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/20/2018  21:35:24  PAGE 5
+
+
+  C:1264H         LINE#         40
+  C:126AH         LINE#         41
+  C:126FH         LINE#         42
+  C:1273H         LINE#         43
+  C:1277H         LINE#         44
+  -------         ENDPROC       FINISH_CHAR
+  -------         PROC          _DISPLAY_CHAR
+  D:0008H         SYMBOL        ch
+  C:128FH         LINE#         46
+  C:1291H         LINE#         48
+  -------         ENDPROC       _DISPLAY_CHAR
+  -------         PROC          _DISPLAY_ELEMENT
+  D:0006H         SYMBOL        element
+  C:1292H         LINE#         50
+  C:1292H         LINE#         51
+  C:1294H         LINE#         52
+  -------         ENDPROC       _DISPLAY_ELEMENT
+  -------         ENDMOD        MORSEDECODER
+
+  -------         MODULE        ?C?FPADD
+  C:0807H         PUBLIC        ?C?FPADD
+  C:0803H         PUBLIC        ?C?FPSUB
+  -------         ENDMOD        ?C?FPADD
+
+  -------         MODULE        ?C?FCAST
+  C:0902H         PUBLIC        ?C?FCASTC
+  C:08FDH         PUBLIC        ?C?FCASTI
+  C:08F8H         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        ?C?CASTF
+  C:0936H         PUBLIC        ?C?CASTF
+  -------         ENDMOD        ?C?CASTF
+
+  -------         MODULE        POW
+  D:000AH         PUBLIC        ?_pow?BYTE
+  C:0DC3H         PUBLIC        _pow
+  -------         ENDMOD        POW
+
+  -------         MODULE        ?C?CHKFLOAT
+  C:09B7H         PUBLIC        ?C?CHKFLOAT
+  -------         ENDMOD        ?C?CHKFLOAT
+
+  -------         MODULE        ?C?FPMUL
+  C:09D1H         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FPCMP
+  C:0AD9H         PUBLIC        ?C?FPCMP
+  C:0AD7H         PUBLIC        ?C?FPCMP3
+  -------         ENDMOD        ?C?FPCMP
+
+  -------         MODULE        ?C?FPNEG
+  C:0B50H         PUBLIC        ?C?FPNEG
+  -------         ENDMOD        ?C?FPNEG
+
+  -------         MODULE        EXP
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/20/2018  21:35:24  PAGE 6
+
+
+  C:10BFH         PUBLIC        _EXP
+  -------         ENDMOD        EXP
+
+  -------         MODULE        LOG
+  C:0CC2H         PUBLIC        _LOG
+  C:0CBEH         PUBLIC        _LOG10
+  -------         ENDMOD        LOG
+
+  -------         MODULE        ?C?FPDIV
+  C:0B64H         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
+
+  -------         MODULE        ?C?IMUL
+  C:0C4EH         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+  -------         MODULE        ?C?LNEG
+  C:0C60H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+  -------         MODULE        ?C?LLDCODE
+  C:0C6EH         PUBLIC        ?C?LLDCODE
+  -------         ENDMOD        ?C?LLDCODE
+
+  -------         MODULE        ?C?LLDCODE0
+  C:0C7EH         PUBLIC        ?C?LLDCODE0
+  -------         ENDMOD        ?C?LLDCODE0
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 029AH BYTE (32%) *
+******************************************************************************
+
+Program Size: data=103.1 xdata=0 code=2718
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
