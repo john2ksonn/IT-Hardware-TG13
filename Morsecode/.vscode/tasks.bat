@@ -1,6 +1,8 @@
 @echo off
 
+REM Maybe change this path to match your installation
 SET batchisp_path="C:\Program Files (x86)\Atmel\Flip 3.4.7\bin\batchisp.exe"
+SET uv4_path="C:\Keil_v5\UV4\UV4.exe"
 REM name of the uvproj file without ending
 SET project_name=morsedecoder
 
@@ -17,7 +19,7 @@ REM Burn the hexfile and exit
 
 REM Compile and goto the next target or exit
 :compile
-    call uv4 -r %project_name%.uvproj -t "Target 1" -o tmp.log -jO
+    %uv4_path% -r %project_name%.uvproj -t "Target 1" -o tmp.log -jO
     set el=%ERRORLEVEL%
     TYPE tmp.log
     DEL tmp.log
