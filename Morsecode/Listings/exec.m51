@@ -1,16 +1,15 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/23/2018  19:18:36  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/23/2018  22:28:07  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
-C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\morsedecoder.obj TO .\Objects\morsedecoder PRINT (.\Listings\morsedecoder.m51) RAM
->> SIZE (256)
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\exec PRINT (.\Listings\exec.m51) RAMSIZE (256)
 
 
 MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
 
 
 INPUT MODULES INCLUDED:
-  .\Objects\morsedecoder.obj (MORSEDECODER)
+  .\Objects\main.obj (MAIN)
   C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPMUL)
   C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPDIV)
   C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FCAST)
@@ -26,7 +25,7 @@ INPUT MODULES INCLUDED:
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
 
 
-LINK MAP OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
+LINK MAP OF MODULE:  .\Objects\exec (MAIN)
 
 
             TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
@@ -34,7 +33,7 @@ LINK MAP OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     005AH     UNIT         ?DT?MORSEDECODER
+            DATA    0008H     005AH     UNIT         ?DT?MAIN
             DATA    0062H     0009H     UNIT         _DATA_GROUP_
             IDATA   006BH     0001H     UNIT         ?STACK
 
@@ -45,99 +44,99 @@ LINK MAP OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
             CODE    000BH     0003H     ABSOLUTE     
                     000EH     07F2H                  *** GAP ***
             CODE    0800H     034EH     UNIT         ?C?LIB_CODE
-            CODE    0B4EH     0174H     UNIT         ?PR?EXT_INT_0?MORSEDECODER
-            CODE    0CC2H     0124H     UNIT         ?PR?INIT?MORSEDECODER
+            CODE    0B4EH     0174H     UNIT         ?PR?EXT_INT_0?MAIN
+            CODE    0CC2H     0124H     UNIT         ?PR?INIT?MAIN
             CODE    0DE6H     008CH     UNIT         ?C_C51STARTUP
             CODE    0E72H     005CH     UNIT         ?C_INITSEG
-            CODE    0ECEH     0059H     UNIT         ?PR?_LCD_SEND?MORSEDECODER
-            CODE    0F27H     0046H     UNIT         ?PR?_ADD_ELEMENT?MORSEDECODER
-            CODE    0F6DH     003BH     UNIT         ?CO?MORSEDECODER
-            CODE    0FA8H     0029H     UNIT         ?PR?_LCD_STRING?MORSEDECODER
-            CODE    0FD1H     0028H     UNIT         ?PR?TIMER_0?MORSEDECODER
-            CODE    0FF9H     0025H     UNIT         ?PR?LCD_INIT?MORSEDECODER
-            CODE    101EH     0025H     UNIT         ?PR?FINISH_CHAR?MORSEDECODER
-            CODE    1043H     0021H     UNIT         ?PR?_WAIT_500U?MORSEDECODER
-            CODE    1064H     0016H     UNIT         ?PR?RESET_TIMER0?MORSEDECODER
-            CODE    107AH     0007H     UNIT         ?PR?_LCD_SEND_B?MORSEDECODER
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  19:18:36  PAGE 2
+            CODE    0ECEH     0059H     UNIT         ?PR?_LCD_SEND?MAIN
+            CODE    0F27H     0046H     UNIT         ?PR?_ADD_ELEMENT?MAIN
+            CODE    0F6DH     003BH     UNIT         ?CO?MAIN
+            CODE    0FA8H     0029H     UNIT         ?PR?_LCD_STRING?MAIN
+            CODE    0FD1H     0028H     UNIT         ?PR?TIMER_0?MAIN
+            CODE    0FF9H     0025H     UNIT         ?PR?LCD_INIT?MAIN
+            CODE    101EH     0025H     UNIT         ?PR?FINISH_CHAR?MAIN
+            CODE    1043H     0021H     UNIT         ?PR?_WAIT_500U?MAIN
+            CODE    1064H     0016H     UNIT         ?PR?RESET_TIMER0?MAIN
+            CODE    107AH     0007H     UNIT         ?PR?_LCD_SEND_B?MAIN
+            CODE    1081H     0007H     UNIT         ?PR?_LCD_SEND_D?MAIN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  22:28:07  PAGE 2
 
 
-            CODE    1081H     0007H     UNIT         ?PR?_LCD_SEND_D?MORSEDECODER
-            CODE    1088H     0005H     UNIT         ?PR?CLEAR_LCD?MORSEDECODER
-            CODE    108DH     0005H     UNIT         ?PR?SELECT_FIRST_LINE?MORSEDECODER
-            CODE    1092H     0005H     UNIT         ?PR?SELECT_SECOND_LINE?MORSEDECODER
-            CODE    1097H     0005H     UNIT         ?PR?MAIN?MORSEDECODER
+            CODE    1088H     0005H     UNIT         ?PR?CLEAR_LCD?MAIN
+            CODE    108DH     0005H     UNIT         ?PR?SELECT_FIRST_LINE?MAIN
+            CODE    1092H     0005H     UNIT         ?PR?SELECT_SECOND_LINE?MAIN
+            CODE    1097H     0005H     UNIT         ?PR?MAIN?MAIN
 
 
 
-OVERLAY MAP OF MODULE:   .\Objects\morsedecoder (MORSEDECODER)
+OVERLAY MAP OF MODULE:   .\Objects\exec (MAIN)
 
 
-SEGMENT                                       DATA_GROUP 
-  +--> CALLED SEGMENT                       START    LENGTH
------------------------------------------------------------
-?PR?EXT_INT_0?MORSEDECODER                  -----    -----
-  +--> ?PR?FINISH_CHAR?MORSEDECODER
-  +--> ?PR?_LCD_STRING?MORSEDECODER
-  +--> ?PR?RESET_TIMER0?MORSEDECODER
-  +--> ?PR?_ADD_ELEMENT?MORSEDECODER
-  +--> ?CO?MORSEDECODER
-  +--> ?PR?CLEAR_LCD?MORSEDECODER
-  +--> ?PR?_WAIT_500U?MORSEDECODER
+SEGMENT                               DATA_GROUP 
+  +--> CALLED SEGMENT               START    LENGTH
+---------------------------------------------------
+?PR?EXT_INT_0?MAIN                  -----    -----
+  +--> ?PR?FINISH_CHAR?MAIN
+  +--> ?PR?_LCD_STRING?MAIN
+  +--> ?PR?RESET_TIMER0?MAIN
+  +--> ?PR?_ADD_ELEMENT?MAIN
+  +--> ?CO?MAIN
+  +--> ?PR?CLEAR_LCD?MAIN
+  +--> ?PR?_WAIT_500U?MAIN
 
-?PR?FINISH_CHAR?MORSEDECODER                0062H    0001H
-  +--> ?PR?_LCD_STRING?MORSEDECODER
+?PR?FINISH_CHAR?MAIN                0062H    0001H
+  +--> ?PR?_LCD_STRING?MAIN
 
-?PR?_LCD_STRING?MORSEDECODER                0067H    0004H
-  +--> ?PR?_LCD_SEND_D?MORSEDECODER
+?PR?_LCD_STRING?MAIN                0067H    0004H
+  +--> ?PR?_LCD_SEND_D?MAIN
 
-?PR?_LCD_SEND_D?MORSEDECODER                -----    -----
-  +--> ?PR?_LCD_SEND?MORSEDECODER
+?PR?_LCD_SEND_D?MAIN                -----    -----
+  +--> ?PR?_LCD_SEND?MAIN
 
-?PR?CLEAR_LCD?MORSEDECODER                  -----    -----
-  +--> ?PR?_LCD_SEND_B?MORSEDECODER
+?PR?CLEAR_LCD?MAIN                  -----    -----
+  +--> ?PR?_LCD_SEND_B?MAIN
 
-?PR?_LCD_SEND_B?MORSEDECODER                -----    -----
-  +--> ?PR?_LCD_SEND?MORSEDECODER
+?PR?_LCD_SEND_B?MAIN                -----    -----
+  +--> ?PR?_LCD_SEND?MAIN
 
 *** NEW ROOT ***************************************************
 
-?C_C51STARTUP                               -----    -----
-  +--> ?PR?MAIN?MORSEDECODER
+?C_C51STARTUP                       -----    -----
+  +--> ?PR?MAIN?MAIN
   +--> ?C_INITSEG
 
-?PR?MAIN?MORSEDECODER                       -----    -----
-  +--> ?PR?INIT?MORSEDECODER
+?PR?MAIN?MAIN                       -----    -----
+  +--> ?PR?INIT?MAIN
 
-?PR?INIT?MORSEDECODER                       -----    -----
-  +--> ?PR?LCD_INIT?MORSEDECODER
-  +--> ?PR?CLEAR_LCD?MORSEDECODER
-  +--> ?PR?SELECT_FIRST_LINE?MORSEDECODER
-  +--> ?PR?_LCD_STRING?MORSEDECODER
-  +--> ?CO?MORSEDECODER
-  +--> ?PR?SELECT_SECOND_LINE?MORSEDECODER
+?PR?INIT?MAIN                       -----    -----
+  +--> ?PR?LCD_INIT?MAIN
+  +--> ?PR?CLEAR_LCD?MAIN
+  +--> ?PR?SELECT_FIRST_LINE?MAIN
+  +--> ?PR?_LCD_STRING?MAIN
+  +--> ?CO?MAIN
+  +--> ?PR?SELECT_SECOND_LINE?MAIN
 
-?PR?LCD_INIT?MORSEDECODER                   -----    -----
-  +--> ?PR?_WAIT_500U?MORSEDECODER
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  19:18:36  PAGE 3
-
-
-  +--> ?PR?_LCD_SEND_B?MORSEDECODER
-
-?PR?SELECT_FIRST_LINE?MORSEDECODER          -----    -----
-  +--> ?PR?_LCD_SEND_B?MORSEDECODER
-
-?PR?SELECT_SECOND_LINE?MORSEDECODER         -----    -----
-  +--> ?PR?_LCD_SEND_B?MORSEDECODER
+?PR?LCD_INIT?MAIN                   -----    -----
+  +--> ?PR?_WAIT_500U?MAIN
+  +--> ?PR?_LCD_SEND_B?MAIN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  22:28:07  PAGE 3
 
 
 
-SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
+?PR?SELECT_FIRST_LINE?MAIN          -----    -----
+  +--> ?PR?_LCD_SEND_B?MAIN
+
+?PR?SELECT_SECOND_LINE?MAIN         -----    -----
+  +--> ?PR?_LCD_SEND_B?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\exec (MAIN)
 
   VALUE           TYPE          NAME
   ----------------------------------
 
-  -------         MODULE        MORSEDECODER
+  -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
@@ -179,10 +178,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
   B:00B0H.2       PUBLIC        key
   D:008CH         PUBLIC        TH0
   B:00A8H.0       PUBLIC        EX0
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  19:18:36  PAGE 4
-
-
   B:0088H.0       PUBLIC        IT0
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  22:28:07  PAGE 4
+
+
   C:0FAEH         PUBLIC        _LCD_string
   D:008AH         PUBLIC        TL0
   D:001AH         PUBLIC        wpm
@@ -239,10 +238,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
   C:1081H         LINE#         49
   C:1081H         LINE#         50
   C:1083H         LINE#         51
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  19:18:36  PAGE 5
-
-
   C:1085H         LINE#         52
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  22:28:07  PAGE 5
+
+
   -------         ENDPROC       _LCD_SEND_D
   -------         PROC          _LCD_SEND
   D:0007H         SYMBOL        Data
@@ -299,10 +298,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
   C:0FC9H         LINE#         95
   C:0FCCH         LINE#         96
   C:0FD0H         LINE#         97
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  19:18:36  PAGE 6
-
-
   -------         ENDPROC       _LCD_STRING
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  22:28:07  PAGE 6
+
+
   -------         PROC          CLEAR_LCD
   C:1088H         LINE#         99
   C:1088H         LINE#         100
@@ -359,10 +358,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
   C:0BAEH         LINE#         13
   C:0BB1H         LINE#         14
   C:0BB3H         LINE#         16
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  19:18:36  PAGE 7
-
-
   C:0BEFH         LINE#         17
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  22:28:07  PAGE 7
+
+
   C:0BF2H         LINE#         18
   C:0BFBH         LINE#         19
   C:0BFBH         LINE#         20
@@ -419,10 +418,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
   C:0F27H         LINE#         28
   C:0F35H         LINE#         29
   C:0F41H         LINE#         30
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  19:18:36  PAGE 8
-
-
   C:0F4BH         LINE#         31
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  22:28:07  PAGE 8
+
+
   C:0F58H         LINE#         32
   C:0F60H         LINE#         33
   C:0F6CH         LINE#         34
@@ -440,7 +439,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
   C:103EH         LINE#         43
   C:1042H         LINE#         44
   -------         ENDPROC       FINISH_CHAR
-  -------         ENDMOD        MORSEDECODER
+  -------         ENDMOD        MAIN
 
   -------         MODULE        ?C?FPMUL
   C:0800H         PUBLIC        ?C?FPMUL
@@ -479,8 +478,8 @@ SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
   -------         MODULE        ?C?ULCMP
   C:0AE8H         PUBLIC        ?C?ULCMP
   -------         ENDMOD        ?C?ULCMP
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  19:18:36  PAGE 9
 
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  22:28:07  PAGE 9
 
 
   -------         MODULE        ?C?UIDIV
@@ -488,8 +487,8 @@ SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
   -------         ENDMOD        ?C?UIDIV
 
 *** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?_LCD_STRING?MORSEDECODER
-    CALLER1: ?PR?EXT_INT_0?MORSEDECODER
+    SEGMENT: ?PR?_LCD_STRING?MAIN
+    CALLER1: ?PR?EXT_INT_0?MAIN
     CALLER2: ?C_C51STARTUP
 
 ******************************************************************************

@@ -37,7 +37,7 @@ void LCD_init() {
     E = 0;
     LCD_send_b(0x28);
     LCD_send_b(0x0c);
-    LCD_send_b(1); //Anzeige löschen 
+    LCD_send_b(1); //Anzeige lï¿½schen 
 }
 void LCD_send_b(unsigned char Data) //Senden eines Befehls
 {

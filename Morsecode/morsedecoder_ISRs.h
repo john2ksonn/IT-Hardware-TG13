@@ -1,4 +1,4 @@
-#include <at89c5131.h>
+#include <AT89C5131.h>
 
 sbit key = button;
 unsigned char overflow_counter = 0;

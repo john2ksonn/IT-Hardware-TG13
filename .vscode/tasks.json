@@ -1,0 +1,35 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile",
+            "type": "shell",
+            /*"command": "./compile.bat ${workspaceFolder}",*/
+            "command": ".vscode/tasks.bat ${workspaceFolder} compile exit",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Burn",
+            "type": "shell",
+            /*"command": "./burn.bat",*/
+            "command": ".vscode/tasks.bat ${workspaceFolder} burn",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Compile and Burn",
+            "type": "shell",
+            /*"command": "./compile_and_burn.bat",*/
+            "command": ".vscode/tasks.bat ${workspaceFolder} compile burn",
+            "problemMatcher": []
+        }
+    ]
+}
