@@ -1,8 +1,8 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        12/09/2018  17:45:21  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/23/2018  13:39:29  PAGE 1
 
 
-BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
-C:\KEIL_V5_ALT\C51\BIN\BL51.EXE .\Objects\LCD_test00.obj TO .\Objects\test PRINT (.\Listings\test.m51) RAMSIZE (256)
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\LCD_test00.obj TO .\Objects\test PRINT (.\Listings\test.m51) RAMSIZE (256)
 
 
 MEMORY MODEL: COMPACT
@@ -10,10 +10,10 @@ MEMORY MODEL: COMPACT
 
 INPUT MODULES INCLUDED:
   .\Objects\LCD_test00.obj (LCD_TEST00)
-  C:\KEIL_V5_ALT\C51\LIB\C51C.LIB (?C_STARTUP)
-  C:\KEIL_V5_ALT\C51\LIB\C51C.LIB (?C?CLDOPTR)
-  C:\KEIL_V5_ALT\C51\LIB\C51C.LIB (?C?CSTOPTR)
-  C:\KEIL_V5_ALT\C51\LIB\C51C.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51C.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51C.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51C.LIB (?C?CSTOPTR)
+  C:\KEIL_V5\C51\LIB\C51C.LIB (?C_INIT)
 
 
 LINK MAP OF MODULE:  .\Objects\test (LCD_TEST00)
@@ -43,23 +43,23 @@ LINK MAP OF MODULE:  .\Objects\test (LCD_TEST00)
             CODE    0800H     0093H     UNIT         ?PR?MAIN?LCD_TEST00
             CODE    0893H     008CH     UNIT         ?C_C51STARTUP
             CODE    091FH     0081H     UNIT         ?C_INITSEG
-            CODE    09A0H     005DH     UNIT         ?PR?_LCD_SEND?LCD_TEST00
-            CODE    09FDH     004FH     UNIT         ?PR?_LCD_PLACE?LCD_TEST00
-            CODE    0A4CH     004FH     UNIT         ?PR?_STRING_PLACE?LCD_TEST00
-            CODE    0A9BH     004FH     UNIT         ?C?LIB_CODE
-            CODE    0AEAH     0043H     UNIT         ?PR?TIMER0?LCD_TEST00
-            CODE    0B2DH     003EH     UNIT         ?CO?LCD_TEST00
-            CODE    0B6BH     0035H     UNIT         ?PR?_LCD_STRING?LCD_TEST00
-            CODE    0BA0H     0025H     UNIT         ?PR?LCD_INIT?LCD_TEST00
-            CODE    0BC5H     0019H     UNIT         ?PR?_WAIT_500U?LCD_TEST00
-            CODE    0BDEH     0007H     UNIT         ?PR?_LCD_SEND_B?LCD_TEST00
-            CODE    0BE5H     0007H     UNIT         ?PR?_LCD_SEND_D?LCD_TEST00
+            CODE    09A0H     0067H     UNIT         ?PR?_LCD_PLACE?LCD_TEST00
+            CODE    0A07H     0067H     UNIT         ?PR?_STRING_PLACE?LCD_TEST00
+            CODE    0A6EH     005DH     UNIT         ?PR?_LCD_SEND?LCD_TEST00
+            CODE    0ACBH     004FH     UNIT         ?C?LIB_CODE
+            CODE    0B1AH     0044H     UNIT         ?PR?TIMER0?LCD_TEST00
+            CODE    0B5EH     003EH     UNIT         ?CO?LCD_TEST00
+            CODE    0B9CH     0035H     UNIT         ?PR?_LCD_STRING?LCD_TEST00
+            CODE    0BD1H     0025H     UNIT         ?PR?LCD_INIT?LCD_TEST00
+            CODE    0BF6H     0021H     UNIT         ?PR?_WAIT_500U?LCD_TEST00
+            CODE    0C17H     0007H     UNIT         ?PR?_LCD_SEND_B?LCD_TEST00
+            CODE    0C1EH     0007H     UNIT         ?PR?_LCD_SEND_D?LCD_TEST00
 
 
 
 OVERLAY MAP OF MODULE:   .\Objects\test (LCD_TEST00)
 
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/09/2018  17:45:21  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  13:39:29  PAGE 2
 
 
 
@@ -102,7 +102,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\test (LCD_TEST00)
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
-  C:0A4CH         PUBLIC        _string_place
+  C:0A07H         PUBLIC        _string_place
   D:00C0H         PUBLIC        P4
   B:00B0H.0       PUBLIC        T1
   B:00B0H.1       PUBLIC        T2
@@ -116,15 +116,15 @@ SYMBOL TABLE OF MODULE:  .\Objects\test (LCD_TEST00)
   X:0016H         PUBLIC        Text_Z1
   X:0018H         PUBLIC        Text_Z2
   D:00B8H         PUBLIC        IPL0
-  C:09FDH         PUBLIC        _lcd_place
+  C:09A0H         PUBLIC        _lcd_place
   X:001AH         PUBLIC        Temp_Vorl
-  C:0BDEH         PUBLIC        _LCD_send_b
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/09/2018  17:45:21  PAGE 3
+  C:0C17H         PUBLIC        _LCD_send_b
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  13:39:29  PAGE 3
 
 
-  C:0BC5H         PUBLIC        _wait_500u
+  C:0BF6H         PUBLIC        _wait_500u
   D:00D8H         PUBLIC        CCON
-  C:0BE5H         PUBLIC        _LCD_send_d
+  C:0C1EH         PUBLIC        _LCD_send_d
   B:0090H.0       PUBLIC        RS
   C:0800H         PUBLIC        main
   B:0090H.1       PUBLIC        RW
@@ -141,17 +141,17 @@ SYMBOL TABLE OF MODULE:  .\Objects\test (LCD_TEST00)
   B:00A8H.1       PUBLIC        ET0
   D:008CH         PUBLIC        TH0
   D:008DH         PUBLIC        TH1
-  C:0B71H         PUBLIC        _LCD_string
+  C:0BA2H         PUBLIC        _LCD_string
   X:0020H         PUBLIC        Sekunde
-  C:0AEAH         PUBLIC        timer0
+  C:0B1AH         PUBLIC        timer0
   B:0088H.4       PUBLIC        TR0
   D:00F8H         PUBLIC        UEPINT
   D:0090H         PUBLIC        LCD_Port
-  C:09A0H         PUBLIC        _LCD_send
+  C:0A6EH         PUBLIC        _LCD_send
   X:0021H         PUBLIC        T_Zeile1
   X:004AH         PUBLIC        T_Zeile2
   D:00C8H         PUBLIC        T2CON
-  C:0BA0H         PUBLIC        LCD_init
+  C:0BD1H         PUBLIC        LCD_init
   X:0073H         PUBLIC        Minute
   X:0076H         PUBLIC        Stunde
   -------         PROC          MAIN
@@ -179,7 +179,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\test (LCD_TEST00)
   C:084DH         LINE#         101
   C:0852H         LINE#         102
   C:085BH         LINE#         103
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/09/2018  17:45:21  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  13:39:29  PAGE 4
 
 
   C:0863H         LINE#         104
@@ -199,82 +199,82 @@ SYMBOL TABLE OF MODULE:  .\Objects\test (LCD_TEST00)
   D:0003H         SYMBOL        j
   D:0004H         SYMBOL        l
   -------         ENDDO         
-  C:0BC5H         LINE#         150
-  C:0BC5H         LINE#         151
-  C:0BC5H         LINE#         153
-  C:0BCFH         LINE#         154
-  C:0BD1H         LINE#         155
+  C:0BF6H         LINE#         150
+  C:0BF6H         LINE#         151
+  C:0BF6H         LINE#         153
+  C:0C00H         LINE#         154
+  C:0C0CH         LINE#         155
   -------         ENDPROC       _WAIT_500U
   -------         PROC          LCD_INIT
-  C:0BA0H         LINE#         156
-  C:0BA0H         LINE#         157
-  C:0BA7H         LINE#         158
-  C:0BA9H         LINE#         159
-  C:0BABH         LINE#         160
-  C:0BADH         LINE#         161
-  C:0BB2H         LINE#         162
-  C:0BB4H         LINE#         163
-  C:0BB6H         LINE#         164
-  C:0BBBH         LINE#         165
-  C:0BC0H         LINE#         166
+  C:0BD1H         LINE#         156
+  C:0BD1H         LINE#         157
+  C:0BD8H         LINE#         158
+  C:0BDAH         LINE#         159
+  C:0BDCH         LINE#         160
+  C:0BDEH         LINE#         161
+  C:0BE3H         LINE#         162
+  C:0BE5H         LINE#         163
+  C:0BE7H         LINE#         164
+  C:0BECH         LINE#         165
+  C:0BF1H         LINE#         166
   -------         ENDPROC       LCD_INIT
   -------         PROC          _LCD_SEND_B
   D:0007H         SYMBOL        Data
-  C:0BDEH         LINE#         168
-  C:0BDEH         LINE#         169
-  C:0BE0H         LINE#         170
-  C:0BE2H         LINE#         171
+  C:0C17H         LINE#         168
+  C:0C17H         LINE#         169
+  C:0C19H         LINE#         170
+  C:0C1BH         LINE#         171
   -------         ENDPROC       _LCD_SEND_B
   -------         PROC          _LCD_SEND_D
   D:0007H         SYMBOL        Data
-  C:0BE5H         LINE#         172
-  C:0BE5H         LINE#         173
-  C:0BE7H         LINE#         174
-  C:0BE9H         LINE#         175
+  C:0C1EH         LINE#         172
+  C:0C1EH         LINE#         173
+  C:0C20H         LINE#         174
+  C:0C22H         LINE#         175
   -------         ENDPROC       _LCD_SEND_D
   -------         PROC          _LCD_SEND
   D:0007H         SYMBOL        Data
   -------         DO            
   D:0006H         SYMBOL        busy
   -------         ENDDO         
-  C:09A0H         LINE#         176
-  C:09A0H         LINE#         177
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/09/2018  17:45:21  PAGE 5
+  C:0A6EH         LINE#         176
+  C:0A6EH         LINE#         177
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  13:39:29  PAGE 5
 
 
-  C:09A2H         LINE#         178
-  C:09A6H         LINE#         179
-  C:09AAH         LINE#         180
-  C:09ADH         LINE#         181
-  C:09B1H         LINE#         182
-  C:09B4H         LINE#         183
-  C:09B8H         LINE#         184
-  C:09BBH         LINE#         185
-  C:09BFH         LINE#         186
-  C:09C1H         LINE#         187
-  C:09C3H         LINE#         188
-  C:09C4H         LINE#         189
-  C:09C6H         LINE#         190
-  C:09C9H         LINE#         191
-  C:09CDH         LINE#         192
-  C:09D0H         LINE#         193
-  C:09D4H         LINE#         194
-  C:09D7H         LINE#         195
-  C:09DAH         LINE#         196
-  C:09DDH         LINE#         197
-  C:09DDH         LINE#         198
-  C:09DFH         LINE#         199
-  C:09E0H         LINE#         200
-  C:09E2H         LINE#         202
-  C:09E4H         LINE#         203
-  C:09E7H         LINE#         204
-  C:09E9H         LINE#         205
-  C:09EBH         LINE#         206
-  C:09EDH         LINE#         207
-  C:09F2H         LINE#         208
-  C:09F4H         LINE#         209
-  C:09F6H         LINE#         210
-  C:09F8H         LINE#         211
+  C:0A70H         LINE#         178
+  C:0A74H         LINE#         179
+  C:0A78H         LINE#         180
+  C:0A7BH         LINE#         181
+  C:0A7FH         LINE#         182
+  C:0A82H         LINE#         183
+  C:0A86H         LINE#         184
+  C:0A89H         LINE#         185
+  C:0A8DH         LINE#         186
+  C:0A8FH         LINE#         187
+  C:0A91H         LINE#         188
+  C:0A92H         LINE#         189
+  C:0A94H         LINE#         190
+  C:0A97H         LINE#         191
+  C:0A9BH         LINE#         192
+  C:0A9EH         LINE#         193
+  C:0AA2H         LINE#         194
+  C:0AA5H         LINE#         195
+  C:0AA8H         LINE#         196
+  C:0AABH         LINE#         197
+  C:0AABH         LINE#         198
+  C:0AADH         LINE#         199
+  C:0AAEH         LINE#         200
+  C:0AB0H         LINE#         202
+  C:0AB2H         LINE#         203
+  C:0AB5H         LINE#         204
+  C:0AB7H         LINE#         205
+  C:0AB9H         LINE#         206
+  C:0ABBH         LINE#         207
+  C:0AC0H         LINE#         208
+  C:0AC2H         LINE#         209
+  C:0AC4H         LINE#         210
+  C:0AC6H         LINE#         211
   -------         ENDPROC       _LCD_SEND
   -------         PROC          L?0038
   -------         ENDPROC       L?0038
@@ -283,10 +283,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\test (LCD_TEST00)
   -------         DO            
   X:007CH         SYMBOL        i
   -------         ENDDO         
-  C:0B71H         LINE#         214
-  C:0B7BH         LINE#         215
-  C:0B7BH         LINE#         216
-  C:0B95H         LINE#         217
+  C:0BA2H         LINE#         214
+  C:0BACH         LINE#         215
+  C:0BACH         LINE#         216
+  C:0BC6H         LINE#         217
   -------         ENDPROC       _LCD_STRING
   -------         PROC          _LCD_PLACE
   X:0000H         SYMBOL        Pos
@@ -295,11 +295,11 @@ SYMBOL TABLE OF MODULE:  .\Objects\test (LCD_TEST00)
   -------         DO            
   X:0007H         SYMBOL        i
   -------         ENDDO         
-  C:09FDH         LINE#         222
-  C:0A0AH         LINE#         223
-  C:0A0AH         LINE#         224
-  C:0A26H         LINE#         225
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/09/2018  17:45:21  PAGE 6
+  C:09A0H         LINE#         222
+  C:09ADH         LINE#         223
+  C:09ADH         LINE#         224
+  C:09CEH         LINE#         225
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  13:39:29  PAGE 6
 
 
   -------         ENDPROC       _LCD_PLACE
@@ -310,34 +310,34 @@ SYMBOL TABLE OF MODULE:  .\Objects\test (LCD_TEST00)
   -------         DO            
   X:000FH         SYMBOL        i
   -------         ENDDO         
-  C:0A4CH         LINE#         230
-  C:0A59H         LINE#         231
-  C:0A59H         LINE#         232
-  C:0A75H         LINE#         233
+  C:0A07H         LINE#         230
+  C:0A14H         LINE#         231
+  C:0A14H         LINE#         232
+  C:0A35H         LINE#         233
   -------         ENDPROC       _STRING_PLACE
   -------         PROC          TIMER0
-  C:0AEAH         LINE#         237
-  C:0AF3H         LINE#         239
-  C:0AF6H         LINE#         240
-  C:0AF9H         LINE#         241
-  C:0B04H         LINE#         242
-  C:0B0CH         LINE#         243
-  C:0B0CH         LINE#         244
-  C:0B0FH         LINE#         245
-  C:0B16H         LINE#         246
-  C:0B1BH         LINE#         247
-  C:0B1FH         LINE#         248
-  C:0B22H         LINE#         249
-  C:0B26H         LINE#         254
+  C:0B1AH         LINE#         237
+  C:0B23H         LINE#         239
+  C:0B26H         LINE#         240
+  C:0B29H         LINE#         241
+  C:0B34H         LINE#         242
+  C:0B3CH         LINE#         243
+  C:0B3CH         LINE#         244
+  C:0B3FH         LINE#         245
+  C:0B46H         LINE#         246
+  C:0B4BH         LINE#         247
+  C:0B50H         LINE#         248
+  C:0B53H         LINE#         249
+  C:0B57H         LINE#         254
   -------         ENDPROC       TIMER0
   -------         ENDMOD        LCD_TEST00
 
   -------         MODULE        ?C?CLDOPTR
-  C:0A9BH         PUBLIC        ?C?CLDOPTR
+  C:0ACBH         PUBLIC        ?C?CLDOPTR
   -------         ENDMOD        ?C?CLDOPTR
 
   -------         MODULE        ?C?CSTOPTR
-  C:0AC8H         PUBLIC        ?C?CSTOPTR
+  C:0AF8H         PUBLIC        ?C?CSTOPTR
   -------         ENDMOD        ?C?CSTOPTR
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
@@ -347,8 +347,8 @@ SYMBOL TABLE OF MODULE:  .\Objects\test (LCD_TEST00)
     SEGMENT: ?PR?_STRING_PLACE?LCD_TEST00
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0313H BYTE (38%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 034CH BYTE (41%) *
 ******************************************************************************
 
-Program Size: data=9.1 xdata=125 code=1010
+Program Size: data=9.1 xdata=125 code=1067
 LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

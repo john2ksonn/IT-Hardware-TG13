@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/20/2018  21:35:24  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/23/2018  17:05:02  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -11,25 +11,19 @@ MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
 
 INPUT MODULES INCLUDED:
   .\Objects\morsedecoder.obj (MORSEDECODER)
-  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPADD)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPDIV)
   C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FCAST)
   C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?CASTF)
-  C:\KEIL_V5\C51\LIB\C51FPS.LIB (POW)
   C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
-  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?CHKFLOAT)
-  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPMUL)
-  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPCMP)
-  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPNEG)
-  C:\KEIL_V5\C51\LIB\C51FPS.LIB (EXP)
-  C:\KEIL_V5\C51\LIB\C51FPS.LIB (LOG)
-  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPDIV)
-  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPSERIES)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C?IMUL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?SIDIV)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LNEG)
-  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDCODE)
-  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDCODE0)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULCMP)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
 
 
 LINK MAP OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
@@ -40,12 +34,9 @@ LINK MAP OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     0010H     UNIT         _DATA_GROUP_
-                    0018H     0008H                  *** GAP ***
-            BIT     0020H.0   0000H.1   UNIT         _BIT_GROUP_
-                    0020H.1   0000H.7                *** GAP ***
-            DATA    0021H     004EH     UNIT         ?DT?MORSEDECODER
-            IDATA   006FH     0001H     UNIT         ?STACK
+            DATA    0008H     005AH     UNIT         ?DT?MORSEDECODER
+            DATA    0062H     0009H     UNIT         _DATA_GROUP_
+            IDATA   006BH     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
@@ -53,62 +44,91 @@ LINK MAP OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
                     0006H     0005H                  *** GAP ***
             CODE    000BH     0003H     ABSOLUTE     
                     000EH     07F2H                  *** GAP ***
-            CODE    0800H     048EH     UNIT         ?C?LIB_CODE
-            CODE    0C8EH     0135H     UNIT         ?PR?LOG?LOG
-            CODE    0DC3H     0117H     UNIT         ?PR?_POW?POW
-            CODE    0EDAH     00FCH     UNIT         ?PR?EXT_INT_0?MORSEDECODER
-            CODE    0FD6H     00B1H     UNIT         ?PR?_ADD_ELEMENT?MORSEDECODER
-            CODE    1087H     009AH     UNIT         ?PR?EXP?EXP
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/20/2018  21:35:24  PAGE 2
+            CODE    0800H     034EH     UNIT         ?C?LIB_CODE
+            CODE    0B4EH     0174H     UNIT         ?PR?EXT_INT_0?MORSEDECODER
+            CODE    0CC2H     0124H     UNIT         ?PR?INIT?MORSEDECODER
+            CODE    0DE6H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0E72H     005CH     UNIT         ?C_INITSEG
+            CODE    0ECEH     0059H     UNIT         ?PR?_LCD_SEND?MORSEDECODER
+            CODE    0F27H     0046H     UNIT         ?PR?_ADD_ELEMENT?MORSEDECODER
+            CODE    0F6DH     003BH     UNIT         ?CO?MORSEDECODER
+            CODE    0FA8H     0029H     UNIT         ?PR?_LCD_STRING?MORSEDECODER
+            CODE    0FD1H     0028H     UNIT         ?PR?TIMER_0?MORSEDECODER
+            CODE    0FF9H     0025H     UNIT         ?PR?LCD_INIT?MORSEDECODER
+            CODE    101EH     0025H     UNIT         ?PR?FINISH_CHAR?MORSEDECODER
+            CODE    1043H     0021H     UNIT         ?PR?_WAIT_500U?MORSEDECODER
+            CODE    1064H     0016H     UNIT         ?PR?RESET_TIMER0?MORSEDECODER
+            CODE    107AH     0007H     UNIT         ?PR?_LCD_SEND_B?MORSEDECODER
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  17:05:02  PAGE 2
 
 
-            CODE    1121H     008CH     UNIT         ?C_C51STARTUP
-            CODE    11ADH     0062H     UNIT         ?C_INITSEG
-            CODE    120FH     002CH     UNIT         ?PR?INIT?MORSEDECODER
-            CODE    123BH     001FH     UNIT         ?PR?TIMER_0?MORSEDECODER
-            CODE    125AH     001EH     UNIT         ?PR?FINISH_CHAR?MORSEDECODER
-            CODE    1278H     0012H     UNIT         ?PR?RESET_TIMER0?MORSEDECODER
-            CODE    128AH     0005H     UNIT         ?PR?MAIN?MORSEDECODER
-            CODE    128FH     0003H     UNIT         ?PR?_DISPLAY_CHAR?MORSEDECODER
-            CODE    1292H     0003H     UNIT         ?PR?_DISPLAY_ELEMENT?MORSEDECODER
+            CODE    1081H     0007H     UNIT         ?PR?_LCD_SEND_D?MORSEDECODER
+            CODE    1088H     0005H     UNIT         ?PR?CLEAR_LCD?MORSEDECODER
+            CODE    108DH     0005H     UNIT         ?PR?SELECT_FIRST_LINE?MORSEDECODER
+            CODE    1092H     0005H     UNIT         ?PR?SELECT_SECOND_LINE?MORSEDECODER
+            CODE    1097H     0005H     UNIT         ?PR?MAIN?MORSEDECODER
 
 
 
 OVERLAY MAP OF MODULE:   .\Objects\morsedecoder (MORSEDECODER)
 
 
-SEGMENT                                      BIT_GROUP          DATA_GROUP 
-  +--> CALLED SEGMENT                     START    LENGTH     START    LENGTH
------------------------------------------------------------------------------
-?PR?EXT_INT_0?MORSEDECODER                -----    -----      -----    -----
-  +--> ?PR?_ADD_ELEMENT?MORSEDECODER
+SEGMENT                                       DATA_GROUP 
+  +--> CALLED SEGMENT                       START    LENGTH
+-----------------------------------------------------------
+?PR?EXT_INT_0?MORSEDECODER                  -----    -----
   +--> ?PR?FINISH_CHAR?MORSEDECODER
-  +--> ?PR?_DISPLAY_CHAR?MORSEDECODER
+  +--> ?PR?_LCD_STRING?MORSEDECODER
   +--> ?PR?RESET_TIMER0?MORSEDECODER
+  +--> ?PR?_ADD_ELEMENT?MORSEDECODER
+  +--> ?CO?MORSEDECODER
+  +--> ?PR?CLEAR_LCD?MORSEDECODER
+  +--> ?PR?_WAIT_500U?MORSEDECODER
 
-?PR?_ADD_ELEMENT?MORSEDECODER             -----    -----      0008H    0002H
-  +--> ?PR?_POW?POW
-  +--> ?PR?_DISPLAY_ELEMENT?MORSEDECODER
+?PR?FINISH_CHAR?MORSEDECODER                0062H    0001H
+  +--> ?PR?_LCD_STRING?MORSEDECODER
 
-?PR?_POW?POW                              -----    -----      000AH    000AH
-  +--> ?PR?LOG?LOG
-  +--> ?PR?EXP?EXP
+?PR?_LCD_STRING?MORSEDECODER                0067H    0004H
+  +--> ?PR?_LCD_SEND_D?MORSEDECODER
 
-?PR?LOG?LOG                               0020H.0  0000H.1    0014H    0004H
+?PR?_LCD_SEND_D?MORSEDECODER                -----    -----
+  +--> ?PR?_LCD_SEND?MORSEDECODER
 
-?PR?FINISH_CHAR?MORSEDECODER              -----    -----      -----    -----
-  +--> ?PR?_DISPLAY_CHAR?MORSEDECODER
+?PR?CLEAR_LCD?MORSEDECODER                  -----    -----
+  +--> ?PR?_LCD_SEND_B?MORSEDECODER
 
-?PR?_DISPLAY_CHAR?MORSEDECODER            -----    -----      0008H    0001H
+?PR?_LCD_SEND_B?MORSEDECODER                -----    -----
+  +--> ?PR?_LCD_SEND?MORSEDECODER
 
 *** NEW ROOT ***************************************************
 
-?C_C51STARTUP                             -----    -----      -----    -----
+?C_C51STARTUP                               -----    -----
   +--> ?PR?MAIN?MORSEDECODER
   +--> ?C_INITSEG
 
-?PR?MAIN?MORSEDECODER                     -----    -----      -----    -----
+?PR?MAIN?MORSEDECODER                       -----    -----
   +--> ?PR?INIT?MORSEDECODER
+
+?PR?INIT?MORSEDECODER                       -----    -----
+  +--> ?PR?LCD_INIT?MORSEDECODER
+  +--> ?PR?CLEAR_LCD?MORSEDECODER
+  +--> ?PR?SELECT_FIRST_LINE?MORSEDECODER
+  +--> ?PR?_LCD_STRING?MORSEDECODER
+  +--> ?CO?MORSEDECODER
+  +--> ?PR?SELECT_SECOND_LINE?MORSEDECODER
+
+?PR?LCD_INIT?MORSEDECODER                   -----    -----
+  +--> ?PR?_WAIT_500U?MORSEDECODER
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  17:05:02  PAGE 3
+
+
+  +--> ?PR?_LCD_SEND_B?MORSEDECODER
+
+?PR?SELECT_FIRST_LINE?MORSEDECODER          -----    -----
+  +--> ?PR?_LCD_SEND_B?MORSEDECODER
+
+?PR?SELECT_SECOND_LINE?MORSEDECODER         -----    -----
+  +--> ?PR?_LCD_SEND_B?MORSEDECODER
 
 
 
@@ -119,220 +139,362 @@ SYMBOL TABLE OF MODULE:  .\Objects\morsedecoder (MORSEDECODER)
 
   -------         MODULE        MORSEDECODER
   C:0000H         SYMBOL        _ICE_DUMMY_
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/20/2018  21:35:24  PAGE 3
-
-
   D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
   D:00C0H         PUBLIC        P4
-  C:125AH         PUBLIC        finish_char
+  C:101EH         PUBLIC        finish_char
   B:00A8H.7       PUBLIC        EA
-  D:0021H         PUBLIC        lastpos
+  D:0008H         PUBLIC        lastpos
   D:00A8H         PUBLIC        IEN0
-  D:0023H         PUBLIC        milliseconds
-  C:0EDAH         PUBLIC        ext_int_0
+  D:000AH         PUBLIC        milliseconds
+  C:0B4EH         PUBLIC        ext_int_0
+  D:000EH         PUBLIC        tmp_ms
   D:00B8H         PUBLIC        IPL0
-  D:0025H         PUBLIC        char_index
+  C:108DH         PUBLIC        select_first_line
+  D:0010H         PUBLIC        char_index
+  C:107AH         PUBLIC        _LCD_send_b
+  C:1043H         PUBLIC        _wait_500u
   D:00D8H         PUBLIC        CCON
-  C:128AH         PUBLIC        main
-  D:0027H         PUBLIC        prior_options_count
-  D:0029H         PUBLIC        power
-  C:123BH         PUBLIC        timer_0
+  C:1081H         PUBLIC        _LCD_send_d
+  B:0090H.0       PUBLIC        RS
+  C:1097H         PUBLIC        main
+  B:0090H.1       PUBLIC        RW
+  B:0090H.4       PUBLIC        LCD_D4
+  B:0090H.5       PUBLIC        LCD_D5
+  D:0012H         PUBLIC        prior_options_count
+  B:0090H.6       PUBLIC        LCD_D6
+  B:0090H.7       PUBLIC        LCD_D7
+  D:0014H         PUBLIC        power
+  C:0FD1H         PUBLIC        timer_0
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
-  C:120FH         PUBLIC        init
-  D:002BH         PUBLIC        last_state
+  C:0CC2H         PUBLIC        init
+  C:1088H         PUBLIC        clear_LCD
+  B:0090H.2       PUBLIC        E
+  D:0016H         PUBLIC        tmp_chars
   B:00A8H.1       PUBLIC        ET0
   B:00B0H.2       PUBLIC        key
-  C:1292H         PUBLIC        _display_element
   D:008CH         PUBLIC        TH0
   B:00A8H.0       PUBLIC        EX0
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  17:05:02  PAGE 4
+
+
   B:0088H.0       PUBLIC        IT0
+  C:0FAEH         PUBLIC        _LCD_string
   D:008AH         PUBLIC        TL0
+  D:001AH         PUBLIC        wpm
   B:0088H.4       PUBLIC        TR0
   D:00F8H         PUBLIC        UEPINT
-  C:1278H         PUBLIC        reset_timer0
-  D:002DH         PUBLIC        overflow_counter
-  D:002FH         PUBLIC        dit_len
+  C:1064H         PUBLIC        reset_timer0
+  D:001CH         PUBLIC        overflow_counter
+  C:0ECEH         PUBLIC        _LCD_send
+  D:001DH         PUBLIC        first_run
+  D:001EH         PUBLIC        dit_len
   D:00C8H         PUBLIC        T2CON
-  C:0FD6H         PUBLIC        _add_element
-  D:0031H         PUBLIC        morsecodetree
-  C:128FH         PUBLIC        _display_char
+  D:0020H         PUBLIC        i
+  C:0FF9H         PUBLIC        LCD_init
+  C:1092H         PUBLIC        select_second_line
+  C:0F27H         PUBLIC        _add_element
+  D:0022H         PUBLIC        morsecodetree
+  D:0060H         PUBLIC        temp_dit_len
+  -------         PROC          _WAIT_500U
+  D:0006H         SYMBOL        k
+  -------         DO            
+  D:0003H         SYMBOL        j
+  D:0004H         SYMBOL        l
+  -------         ENDDO         
+  C:1043H         LINE#         23
+  C:1043H         LINE#         26
+  C:104DH         LINE#         27
+  C:105CH         LINE#         28
+  C:1063H         LINE#         29
+  -------         ENDPROC       _WAIT_500U
+  -------         PROC          LCD_INIT
+  C:0FF9H         LINE#         30
+  C:0FF9H         LINE#         31
+  C:1000H         LINE#         32
+  C:1002H         LINE#         33
+  C:1004H         LINE#         34
+  C:1006H         LINE#         35
+  C:100BH         LINE#         36
+  C:100DH         LINE#         37
+  C:100FH         LINE#         38
+  C:1014H         LINE#         39
+  C:1019H         LINE#         40
+  -------         ENDPROC       LCD_INIT
+  -------         PROC          _LCD_SEND_B
+  D:0007H         SYMBOL        Data
+  C:107AH         LINE#         42
+  C:107AH         LINE#         43
+  C:107AH         LINE#         44
+  C:107CH         LINE#         45
+  C:107EH         LINE#         46
+  -------         ENDPROC       _LCD_SEND_B
+  -------         PROC          _LCD_SEND_D
+  D:0007H         SYMBOL        Data
+  C:1081H         LINE#         48
+  C:1081H         LINE#         49
+  C:1081H         LINE#         50
+  C:1083H         LINE#         51
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  17:05:02  PAGE 5
+
+
+  C:1085H         LINE#         52
+  -------         ENDPROC       _LCD_SEND_D
+  -------         PROC          _LCD_SEND
+  D:0007H         SYMBOL        Data
+  -------         DO            
+  D:0006H         SYMBOL        busy
+  -------         ENDDO         
+  C:0ECEH         LINE#         54
+  C:0ECEH         LINE#         55
+  C:0ED0H         LINE#         56
+  C:0ED4H         LINE#         57
+  C:0ED8H         LINE#         58
+  C:0EDBH         LINE#         59
+  C:0EDFH         LINE#         60
+  C:0EE2H         LINE#         61
+  C:0EE6H         LINE#         62
+  C:0EE9H         LINE#         63
+  C:0EEDH         LINE#         64
+  C:0EEFH         LINE#         65
+  C:0EF0H         LINE#         66
+  C:0EF2H         LINE#         67
+  C:0EF5H         LINE#         68
+  C:0EF9H         LINE#         69
+  C:0EFCH         LINE#         70
+  C:0F00H         LINE#         71
+  C:0F03H         LINE#         72
+  C:0F06H         LINE#         73
+  C:0F09H         LINE#         74
+  C:0F09H         LINE#         75
+  C:0F0BH         LINE#         76
+  C:0F0CH         LINE#         77
+  C:0F0EH         LINE#         79
+  C:0F10H         LINE#         80
+  C:0F13H         LINE#         81
+  C:0F15H         LINE#         82
+  C:0F17H         LINE#         83
+  C:0F19H         LINE#         84
+  C:0F1EH         LINE#         85
+  C:0F20H         LINE#         86
+  C:0F22H         LINE#         87
+  C:0F24H         LINE#         88
+  C:0F26H         LINE#         89
+  -------         ENDPROC       _LCD_SEND
+  C:0FAAH         SYMBOL        L?0060
+  -------         PROC          L?0059
+  -------         ENDPROC       L?0059
+  C:0FAAH         SYMBOL        L?0060
+  -------         PROC          _LCD_STRING
+  D:0067H         SYMBOL        Text
+  -------         DO            
+  D:006AH         SYMBOL        i
+  -------         ENDDO         
+  C:0FAEH         LINE#         91
+  C:0FB4H         LINE#         94
+  C:0FC9H         LINE#         95
+  C:0FCCH         LINE#         96
+  C:0FD0H         LINE#         97
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  17:05:02  PAGE 6
+
+
+  -------         ENDPROC       _LCD_STRING
+  -------         PROC          CLEAR_LCD
+  C:1088H         LINE#         99
+  C:1088H         LINE#         100
+  -------         ENDPROC       CLEAR_LCD
+  -------         PROC          SELECT_FIRST_LINE
+  C:108DH         LINE#         103
+  C:108DH         LINE#         104
+  -------         ENDPROC       SELECT_FIRST_LINE
+  -------         PROC          SELECT_SECOND_LINE
+  C:1092H         LINE#         107
+  C:1092H         LINE#         108
+  -------         ENDPROC       SELECT_SECOND_LINE
   -------         PROC          INIT
-  C:120FH         LINE#         25
-  C:120FH         LINE#         32
-  C:1227H         LINE#         37
-  C:1229H         LINE#         39
-  C:122CH         LINE#         41
-  C:122FH         LINE#         42
-  C:1232H         LINE#         44
-  C:1234H         LINE#         49
-  C:1236H         LINE#         51
-  C:1238H         LINE#         54
-  C:123AH         LINE#         55
+  C:0CC2H         LINE#         31
+  C:0CC2H         LINE#         38
+  C:0CDAH         LINE#         43
+  C:0CDCH         LINE#         45
+  C:0CDFH         LINE#         47
+  C:0CE2H         LINE#         48
+  C:0CE5H         LINE#         50
+  C:0CE7H         LINE#         55
+  C:0CE9H         LINE#         57
+  C:0CEBH         LINE#         60
+  C:0CEDH         LINE#         63
+  C:0CEFH         LINE#         67
+  C:0CF2H         LINE#         68
+  C:0CF5H         LINE#         69
+  C:0CF8H         LINE#         70
+  C:0D2FH         LINE#         71
+  C:0D3BH         LINE#         72
+  C:0D3EH         LINE#         73
+  C:0D44H         LINE#         74
+  C:0D53H         LINE#         75
+  C:0D65H         LINE#         76
+  C:0D77H         LINE#         77
+  C:0D7AH         LINE#         78
+  C:0D83H         LINE#         79
+  C:0D89H         LINE#         80
+  C:0D8FH         LINE#         81
+  C:0DA5H         LINE#         82
+  C:0DB4H         LINE#         83
+  C:0DC6H         LINE#         84
+  C:0DC9H         LINE#         85
+  C:0DCDH         LINE#         86
+  C:0DD6H         LINE#         87
+  C:0DD9H         LINE#         88
+  C:0DE2H         LINE#         89
+  C:0DE5H         LINE#         90
   -------         ENDPROC       INIT
   -------         PROC          EXT_INT_0
-  C:0EDAH         LINE#         7
-  C:0EF7H         LINE#         9
-  C:0F00H         LINE#         11
-  C:0F1CH         LINE#         12
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/20/2018  21:35:24  PAGE 4
+  C:0B4EH         LINE#         9
+  C:0B6BH         LINE#         10
+  C:0B72H         LINE#         12
+  C:0BAEH         LINE#         13
+  C:0BB1H         LINE#         14
+  C:0BB3H         LINE#         16
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  17:05:02  PAGE 7
 
 
-  C:0F1FH         LINE#         13
-  C:0F21H         LINE#         15
-  C:0F44H         LINE#         16
-  C:0F4BH         LINE#         17
-  C:0F4BH         LINE#         18
-  C:0F4DH         LINE#         20
-  C:0F58H         LINE#         22
-  C:0F7BH         LINE#         23
-  C:0F7EH         LINE#         24
-  C:0F80H         LINE#         26
-  C:0FA3H         LINE#         27
-  C:0FA6H         LINE#         28
-  C:0FABH         LINE#         29
-  C:0FABH         LINE#         30
-  C:0FABH         LINE#         31
-  C:0FAEH         LINE#         32
-  C:0FB0H         LINE#         33
-  C:0FB9H         LINE#         34
-  C:0FBBH         LINE#         35
+  C:0BEFH         LINE#         17
+  C:0BF2H         LINE#         18
+  C:0BFBH         LINE#         19
+  C:0BFBH         LINE#         20
+  C:0BFEH         LINE#         21
+  C:0C01H         LINE#         23
+  C:0C07H         LINE#         24
+  C:0C0DH         LINE#         25
+  C:0C23H         LINE#         26
+  C:0C32H         LINE#         27
+  C:0C44H         LINE#         28
+  C:0C47H         LINE#         31
+  C:0C5CH         LINE#         32
+  C:0C62H         LINE#         33
+  C:0C68H         LINE#         34
+  C:0C6AH         LINE#         36
+  C:0C85H         LINE#         37
+  C:0C8CH         LINE#         38
+  C:0C95H         LINE#         39
+  C:0C95H         LINE#         40
+  C:0C97H         LINE#         41
+  C:0C9AH         LINE#         42
+  C:0C9DH         LINE#         43
+  C:0CA4H         LINE#         44
+  C:0CA4H         LINE#         45
+  C:0CA7H         LINE#         46
   -------         ENDPROC       EXT_INT_0
   -------         PROC          TIMER_0
-  C:123BH         LINE#         37
-  C:123DH         LINE#         38
-  C:1245H         LINE#         39
-  C:124BH         LINE#         40
-  C:124FH         LINE#         41
-  C:1257H         LINE#         42
-  C:1257H         LINE#         43
+  C:0FD1H         LINE#         48
+  C:0FD5H         LINE#         49
+  C:0FD7H         LINE#         50
+  C:0FDDH         LINE#         51
+  C:0FDFH         LINE#         52
+  C:0FF4H         LINE#         53
+  C:0FF4H         LINE#         54
   -------         ENDPROC       TIMER_0
   -------         PROC          MAIN
-  C:128AH         LINE#         11
-  C:128AH         LINE#         12
-  C:128DH         LINE#         13
+  C:1097H         LINE#         10
+  C:1097H         LINE#         11
+  C:109AH         LINE#         12
   -------         ENDPROC       MAIN
   -------         PROC          RESET_TIMER0
-  C:1278H         LINE#         16
-  C:1278H         LINE#         18
-  C:127AH         LINE#         20
-  C:127DH         LINE#         21
-  C:1280H         LINE#         22
-  C:1285H         LINE#         23
-  C:1289H         LINE#         24
+  C:1064H         LINE#         15
+  C:1064H         LINE#         17
+  C:1066H         LINE#         18
+  C:1069H         LINE#         19
+  C:106CH         LINE#         20
+  C:106FH         LINE#         21
+  C:1077H         LINE#         22
+  C:1079H         LINE#         23
   -------         ENDPROC       RESET_TIMER0
   -------         PROC          _ADD_ELEMENT
-  D:0008H         SYMBOL        element
-  C:0FD6H         LINE#         28
-  C:0FDAH         LINE#         29
-  C:1017H         LINE#         30
-  C:1023H         LINE#         31
-  C:102FH         LINE#         32
-  C:103CH         LINE#         33
-  C:1044H         LINE#         34
-  C:1080H         LINE#         35
+  D:0006H         SYMBOL        element
+  C:0F27H         LINE#         27
+  C:0F27H         LINE#         28
+  C:0F35H         LINE#         29
+  C:0F41H         LINE#         30
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  17:05:02  PAGE 8
+
+
+  C:0F4BH         LINE#         31
+  C:0F58H         LINE#         32
+  C:0F60H         LINE#         33
+  C:0F6CH         LINE#         34
   -------         ENDPROC       _ADD_ELEMENT
   -------         PROC          FINISH_CHAR
-  C:125AH         LINE#         38
-  C:125AH         LINE#         39
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/20/2018  21:35:24  PAGE 5
-
-
-  C:1264H         LINE#         40
-  C:126AH         LINE#         41
-  C:126FH         LINE#         42
-  C:1273H         LINE#         43
-  C:1277H         LINE#         44
+  -------         DO            
+  D:0062H         SYMBOL        tmp_char
+  -------         ENDDO         
+  C:101EH         LINE#         36
+  C:101EH         LINE#         38
+  C:1026H         LINE#         39
+  C:102FH         LINE#         40
+  C:1035H         LINE#         41
+  C:103AH         LINE#         42
+  C:103EH         LINE#         43
+  C:1042H         LINE#         44
   -------         ENDPROC       FINISH_CHAR
-  -------         PROC          _DISPLAY_CHAR
-  D:0008H         SYMBOL        ch
-  C:128FH         LINE#         46
-  C:1291H         LINE#         48
-  -------         ENDPROC       _DISPLAY_CHAR
-  -------         PROC          _DISPLAY_ELEMENT
-  D:0006H         SYMBOL        element
-  C:1292H         LINE#         50
-  C:1292H         LINE#         51
-  C:1294H         LINE#         52
-  -------         ENDPROC       _DISPLAY_ELEMENT
   -------         ENDMOD        MORSEDECODER
 
-  -------         MODULE        ?C?FPADD
-  C:0807H         PUBLIC        ?C?FPADD
-  C:0803H         PUBLIC        ?C?FPSUB
-  -------         ENDMOD        ?C?FPADD
+  -------         MODULE        ?C?FPMUL
+  C:0800H         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FPDIV
+  C:0909H         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
 
   -------         MODULE        ?C?FCAST
-  C:0902H         PUBLIC        ?C?FCASTC
-  C:08FDH         PUBLIC        ?C?FCASTI
-  C:08F8H         PUBLIC        ?C?FCASTL
+  C:09B0H         PUBLIC        ?C?FCASTC
+  C:09ABH         PUBLIC        ?C?FCASTI
+  C:09A6H         PUBLIC        ?C?FCASTL
   -------         ENDMOD        ?C?FCAST
 
   -------         MODULE        ?C?CASTF
-  C:0936H         PUBLIC        ?C?CASTF
+  C:09E4H         PUBLIC        ?C?CASTF
   -------         ENDMOD        ?C?CASTF
 
-  -------         MODULE        POW
-  D:000AH         PUBLIC        ?_pow?BYTE
-  C:0DC3H         PUBLIC        _pow
-  -------         ENDMOD        POW
-
-  -------         MODULE        ?C?CHKFLOAT
-  C:09B7H         PUBLIC        ?C?CHKFLOAT
-  -------         ENDMOD        ?C?CHKFLOAT
-
-  -------         MODULE        ?C?FPMUL
-  C:09D1H         PUBLIC        ?C?FPMUL
-  -------         ENDMOD        ?C?FPMUL
-
-  -------         MODULE        ?C?FPCMP
-  C:0AD9H         PUBLIC        ?C?FPCMP
-  C:0AD7H         PUBLIC        ?C?FPCMP3
-  -------         ENDMOD        ?C?FPCMP
-
-  -------         MODULE        ?C?FPNEG
-  C:0B50H         PUBLIC        ?C?FPNEG
-  -------         ENDMOD        ?C?FPNEG
-
-  -------         MODULE        EXP
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/20/2018  21:35:24  PAGE 6
-
-
-  C:10BFH         PUBLIC        _EXP
-  -------         ENDMOD        EXP
-
-  -------         MODULE        LOG
-  C:0CC2H         PUBLIC        _LOG
-  C:0CBEH         PUBLIC        _LOG10
-  -------         ENDMOD        LOG
-
-  -------         MODULE        ?C?FPDIV
-  C:0B64H         PUBLIC        ?C?FPDIV
-  -------         ENDMOD        ?C?FPDIV
+  -------         MODULE        ?C?CLDOPTR
+  C:0A65H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
 
   -------         MODULE        ?C?IMUL
-  C:0C4EH         PUBLIC        ?C?IMUL
+  C:0A92H         PUBLIC        ?C?IMUL
   -------         ENDMOD        ?C?IMUL
 
+  -------         MODULE        ?C?SIDIV
+  C:0AA4H         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
   -------         MODULE        ?C?LNEG
-  C:0C60H         PUBLIC        ?C?LNEG
+  C:0ADAH         PUBLIC        ?C?LNEG
   -------         ENDMOD        ?C?LNEG
 
-  -------         MODULE        ?C?LLDCODE
-  C:0C6EH         PUBLIC        ?C?LLDCODE
-  -------         ENDMOD        ?C?LLDCODE
+  -------         MODULE        ?C?ULCMP
+  C:0AE8H         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/23/2018  17:05:02  PAGE 9
 
-  -------         MODULE        ?C?LLDCODE0
-  C:0C7EH         PUBLIC        ?C?LLDCODE0
-  -------         ENDMOD        ?C?LLDCODE0
+
+
+  -------         MODULE        ?C?UIDIV
+  C:0AF9H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?MORSEDECODER
+    CALLER1: ?PR?EXT_INT_0?MORSEDECODER
+    CALLER2: ?C_C51STARTUP
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 029AH BYTE (32%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 04C7H BYTE (59%) *
 ******************************************************************************
 
-Program Size: data=103.1 xdata=0 code=2718
-LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
+Program Size: data=108.0 xdata=0 code=2213
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

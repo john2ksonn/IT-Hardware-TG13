@@ -15,7 +15,7 @@ In der Endlosschleife werden verschiedene Ausgaben gemacht
 
 /**************Befehlsbeispiele
 //	LCD_send_b(0x07);	//Display shift	links
-//	LCD_send_b(0x05);	//Display shift	rechts= von rechts nach links schreiben
+//	+	//Display shift	rechts= von rechts nach links schreiben
 //	LCD_send_b(0x06);	//Display shift	aus;	nach rechts schreiben
 //	LCD_send_b(1);	//Anzeige löschen zurück auf 1. Zeile Position 1	1640us
 //  LCD_send_b(0x80+n);	 //n=0h..27h; n=0-->Cursor Anfang erste Zeile

@@ -1,3 +1,6 @@
+#include <at89c5131.h>
+#include <LCD.h>
+
 #define true 1
 #define false !true
 #define uint unsigned int
@@ -7,7 +10,7 @@
 #define LOW !HIGH   //logic LOW
 	
 #define button P3^2  //interrupt0
-#define min_dit_len 50
+#define min_dit_len 25
 #define human_error_margin (min_dit_len/10)
 
 //stores the string as char array
@@ -15,12 +18,15 @@
 const char morsecodetree[62] = "ETIANMSURWDKGOHVF#L#PJBXCYZQ##54#3###2#######16#######7###8#90";
 
 unsigned int dit_len = 1;
+int i;
+char tmp_chars[4];
+int wpm;
+int temp_dit_len;
+unsigned char first_run = true;
 
 void reset_timer0();
-void display_char(char ch);
 void finish_char();
 void add_element(uint element);
-void display_element(int element);
 
 void init() {
 	//READING SPEED SETTING FROM DIP SWITHES ON P3 (P3^4 - P3^7)
@@ -45,11 +51,41 @@ void init() {
 	
 	//INIT EXTERNAL INTERRUPT
 	//-----------------------
-	//trigger on rising and falling flank
-	IT0 = true;
+	//trigger on falling edge
+	IT0 = false;
 	//enabling external interrupt0
 	EX0 = true;
 	
 	//enabling all interrupts
 	EA = true;
+	
+	//start timer0
+	TR0 = true;
+	
+	//INIT LCD
+	//--------
+	LCD_init();
+	clear_LCD();
+	select_first_line();
+	wpm = (60000.0/(dit_len*50))*10;
+	tmp_chars[3] = (wpm%10) + 0x30;
+	tmp_chars[2] = 0x2c;
+	for (i = 1; i >= 0; i--) {
+		wpm/=10;
+		tmp_chars[i] = (wpm%10) + 0x30;
+	}
+	LCD_string(tmp_chars);
+	LCD_string(" WPM | ");
+	temp_dit_len = dit_len;
+	for (i = 2; i >= 0; i--) {
+		tmp_chars[i] = (temp_dit_len%10) + 0x30;
+		temp_dit_len/=10;
+	}
+	tmp_chars[3] = 0x0;
+	LCD_string(tmp_chars);
+	LCD_string(" ms per dit");
+	select_second_line();
+	LCD_string("using \"PARIS\" with 50 elements");
+	first_run = true;
 }
+
