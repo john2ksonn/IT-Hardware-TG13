@@ -1,8 +1,10 @@
 @echo off
 
 REM Maybe change this path to match your installation
-SET batchisp_path="C:\Program Files (x86)\Atmel\Flip 3.4.7\bin\batchisp.exe"
-SET uv4_path="C:\Keil_v5\UV4\UV4.exe"
+REM SET batchisp_path="C:\Program Files (x86)\Atmel\Flip 3.4.7\bin\batchisp.exe"
+SET batchisp_path="D:\Portables\Atmel\Flip 3.4.7\bin\batchisp.exe"
+REM SET uv4_path="C:\Keil_v5\UV4\UV4.exe"
+SET uv4_path="D:\Portables\Keil_v5\UV4\UV4.exe"
 REM name of the uvproj file without ending
 SET project_name=morsedecoder
 

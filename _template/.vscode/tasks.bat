@@ -1,8 +1,10 @@
 @echo off
 
 REM Maybe change this path to match your installation
-SET batchisp_path="C:\Program Files (x86)\Atmel\Flip 3.4.7\bin\batchisp.exe"
-SET uv4_path="C:\Keil_v5\UV4\UV4.exe"
+REM SET batchisp_path="C:\Program Files (x86)\Atmel\Flip 3.4.7\bin\batchisp.exe"
+SET batchisp_path="D:\Portables\Atmel\Flip 3.4.7\bin\batchisp.exe"
+REM SET uv4_path="C:\Keil_v5\UV4\UV4.exe"
+SET uv4_path="D:\Portables\Keil_v5\UV4\UV4.exe"
 REM name of the uvproj file without ending
 SET project_name=CHANGE_THIS_TO_MATCH_YOUR_PROJECT
 
@@ -14,7 +16,7 @@ GOTO %2
 
 REM Burn the hexfile and exit
 :burn
-    %batchisp_path% -device AT89C5131 -hardware usb -operation erase f blankcheck loadbuffer "Objects\%project_name%.hex" program verify
+    %batchisp_path% -device AT89C5131 -hardware usb -operation erase f blankcheck loadbuffer "Objects\output.hex" program verify
     exit %ERRORLEVEL%
 
 REM Compile and goto the next target or exit
