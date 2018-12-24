@@ -18,10 +18,6 @@
             "type": "shell",
             /*"command": "./burn.bat",*/
             "command": ".vscode/tasks.bat ${workspaceFolder} burn",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
             "problemMatcher": []
         },
         {
@@ -29,6 +25,10 @@
             "type": "shell",
             /*"command": "./compile_and_burn.bat",*/
             "command": ".vscode/tasks.bat ${workspaceFolder} compile burn",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "problemMatcher": []
         }
     ]

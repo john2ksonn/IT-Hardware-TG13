@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "morsedecoder_isrs.h": "c",
+        "main.h": "c",
+        "morsedecoder.h": "c",
+        "at89c5131.h": "c"
+    }
+}

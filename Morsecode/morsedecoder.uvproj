@@ -381,6 +381,21 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>morsedecoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\morsedecoder.c</FilePath>
+            </File>
+            <File>
+              <FileName>morsedecoder_isrs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\morsedecoder_isrs.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

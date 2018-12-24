@@ -1,9 +1,8 @@
-#include <AT89C5131.h>
-#include <morsedecoder.h>
-#include <morsedecoder_ISRs.h>
+#include <main.h>
 
 int char_index = -1;
-uint prior_options_count = 0; // is needed to calc the last position (lastpos)
+// is needed to calc the last position (lastpos)
+uint prior_options_count = 0;
 uint lastpos = 0;
 uint power = 0;
 

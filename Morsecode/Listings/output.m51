@@ -1,0 +1,216 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/24/2018  16:13:29  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\output PRINT (.\Listings\output.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\output (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         ?DT?MAIN
+            DATA    0010H     0001H     UNIT         ?DT?FINISH_CHAR?MAIN
+            IDATA   0011H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0046H     UNIT         ?PR?_ADD_ELEMENT?MAIN
+            CODE    08D2H     0025H     UNIT         ?PR?FINISH_CHAR?MAIN
+            CODE    08F7H     0016H     UNIT         ?PR?RESET_TIMER0?MAIN
+            CODE    090DH     0011H     UNIT         ?C_INITSEG
+            CODE    091EH     0005H     UNIT         ?PR?MAIN?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\output (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+
+
+UNRESOLVED EXTERNAL SYMBOLS:
+   INIT
+   MILLISECONDS
+   MORSECODETREE
+   OVERFLOW_COUNTER
+   _LCD_STRING
+
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2018  16:13:29  PAGE 2
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\output (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  C:08D2H         PUBLIC        finish_char
+  D:0008H         PUBLIC        lastpos
+  D:00A8H         PUBLIC        IEN0
+  D:00B8H         PUBLIC        IPL0
+  D:000AH         PUBLIC        char_index
+  D:00D8H         PUBLIC        CCON
+  C:091EH         PUBLIC        main
+  D:000CH         PUBLIC        prior_options_count
+  D:000EH         PUBLIC        power
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  D:00F8H         PUBLIC        UEPINT
+  C:08F7H         PUBLIC        reset_timer0
+  D:00C8H         PUBLIC        T2CON
+  C:088CH         PUBLIC        _add_element
+  -------         PROC          MAIN
+  C:091EH         LINE#         9
+  C:091EH         LINE#         10
+  C:0921H         LINE#         11
+  -------         ENDPROC       MAIN
+  -------         PROC          RESET_TIMER0
+  C:08F7H         LINE#         15
+  C:08F7H         LINE#         17
+  C:08F9H         LINE#         18
+  C:08FCH         LINE#         19
+  C:08FFH         LINE#         20
+  C:0902H         LINE#         21
+  C:090AH         LINE#         22
+  C:090CH         LINE#         23
+  -------         ENDPROC       RESET_TIMER0
+  -------         PROC          _ADD_ELEMENT
+  D:0006H         SYMBOL        element
+  C:088CH         LINE#         27
+  C:088CH         LINE#         28
+  C:089AH         LINE#         29
+  C:08A6H         LINE#         30
+  C:08B0H         LINE#         31
+  C:08BDH         LINE#         32
+  C:08C5H         LINE#         33
+  C:08D1H         LINE#         34
+  -------         ENDPROC       _ADD_ELEMENT
+  -------         PROC          FINISH_CHAR
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2018  16:13:29  PAGE 3
+
+
+  -------         DO            
+  D:0010H         SYMBOL        tmp_char
+  -------         ENDDO         
+  C:08D2H         LINE#         36
+  C:08D2H         LINE#         38
+  C:08DAH         LINE#         39
+  C:08E3H         LINE#         40
+  C:08E9H         LINE#         41
+  C:08EEH         LINE#         42
+  C:08F2H         LINE#         43
+  C:08F6H         LINE#         44
+  -------         ENDPROC       FINISH_CHAR
+  -------         ENDMOD        MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET_TIMER0?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ADD_ELEMENT?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FINISH_CHAR?MAIN
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  MILLISECONDS
+    MODULE:  .\Objects\main.obj (MAIN)
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  INIT
+    MODULE:  .\Objects\main.obj (MAIN)
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _LCD_STRING
+    MODULE:  .\Objects\main.obj (MAIN)
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  OVERFLOW_COUNTER
+    MODULE:  .\Objects\main.obj (MAIN)
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  MORSECODETREE
+    MODULE:  .\Objects\main.obj (MAIN)
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  INIT
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 091FH
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OVERFLOW_COUNTER
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0901H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  MILLISECONDS
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0903H
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2018  16:13:29  PAGE 4
+
+
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  MILLISECONDS
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0905H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  MILLISECONDS
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0907H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  MILLISECONDS
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0909H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  MORSECODETREE
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 08D3H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _LCD_STRING
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 08E1H
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0096H BYTE ( 7%) *
+******************************************************************************
+
+Program Size: data=18.0 xdata=0 code=294
+LINK/LOCATE RUN COMPLETE.  16 WARNING(S),  0 ERROR(S)
