@@ -5,9 +5,11 @@ title = InputBox("Please enter the project title", "Project title")
 oFSO.CopyFolder "_template", title
 oFSO.MoveFile title+"\_template.uvproj", title+"\"+title+".uvproj"
 oFSO.MoveFile title+"\_template.c", title+"\"+title+".c"
+oFSO.MoveFile title+"\_template.h", title+"\"+title+".h"
 
 FindAndReplace title+"\.vscode\tasks.bat", "CHANGE_THIS_TO_MATCH_YOUR_PROJECT", title
 FindAndReplace title+"\"+title+".uvproj", "_template", title
+FindAndReplace title+"\"+title+".c", "_template", title
 
 function FindAndReplace(strFilename, strFind, strReplace)
     Set inputFile = CreateObject("Scripting.FileSystemObject").OpenTextFile(strFilename, 1)
