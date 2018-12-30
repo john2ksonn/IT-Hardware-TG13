@@ -18,4 +18,6 @@ extern void LCD_string(unsigned char* Text);
 extern void clear_LCD();
 extern void wait_500u(unsigned int k);
 
+void init_isrs();
+
 #endif //_MORSEDECODER_ISRS_H_

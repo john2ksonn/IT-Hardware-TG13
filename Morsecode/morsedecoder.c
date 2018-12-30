@@ -21,30 +21,7 @@ void init() {
     // 0 to 15 multiplying with min_dit_len
     dit_len = min_dit_len * (((P3 & 0xf0) >> 4) + 1);
 
-    // INIT TIMER
-    //----------
-    // stop timer0
-    TR0 = false;
-    // 0x2 = 0b10 => 8 bit auto-reload timer
-    TMOD = 0x2;
-    // 250 microseconds until overflow
-    TL0 = 5;
-    TH0 = TL0;
-    // enabling timer0 interrupt
-    ET0 = true;
-
-    // INIT EXTERNAL INTERRUPT
-    //-----------------------
-    // trigger on falling edge
-    IT0 = false;
-    // enabling external interrupt0
-    EX0 = true;
-
-    // enabling all interrupts
-    EA = true;
-
-    // start timer0
-    TR0 = true;
+    init_isrs();
 
     // INIT LCD
     //--------

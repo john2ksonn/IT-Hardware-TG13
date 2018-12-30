@@ -6,6 +6,7 @@
 #include "config.h"
 
 extern void LCD_init();
+extern void init_isrs();
 extern void clear_LCD();
 extern void LCD_string(unsigned char* Text);
 extern void select_first_line();
