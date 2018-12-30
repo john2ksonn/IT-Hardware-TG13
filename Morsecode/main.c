@@ -30,7 +30,7 @@ void add_element(uint element) {
     char_index += element;
     lastpos = char_index - prior_options_count;
     exponent += 1;
-    prior_options_count += (2, exponent);
+    prior_options_count += calc_pow(2, exponent);
 }
 
 void finish_char() {
@@ -44,10 +44,10 @@ void finish_char() {
 }
 
 int calc_pow(uint base, uint exponent) {
-    unsigned char i;
-    uint res;
+    uint i;
+    uint res = 1;
     for (i = 0; i < exponent; i++) {
         res *= base;
     }
-    return base;
+    return res;
 }

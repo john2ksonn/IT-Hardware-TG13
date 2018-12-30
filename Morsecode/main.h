@@ -14,6 +14,6 @@ void main();
 void reset_timer0();
 void add_element(uint element);
 void finish_char();
-int calc_pow(int base, int exponent);
+int calc_pow(uint base, uint exponent);
 
 #endif  //_MAIN_H_
