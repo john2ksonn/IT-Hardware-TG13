@@ -35,7 +35,10 @@ void add_element(uint element) {
 
 void finish_char() {
     if (char_index != -1) {
-        LCD_send_d(morsecodetree[char_index]);
+        if (char_index < 62)
+            LCD_send_d(morsecodetree[char_index]);
+        else
+            LCD_string("*");
         char_index = -1;
         lastpos = 0;
         exponent = 0;

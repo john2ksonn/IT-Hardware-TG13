@@ -24,12 +24,16 @@ void init_isrs() {
 
     // INIT EXTERNAL INTERRUPT
     //-----------------------
-    // trigger on falling edge (button press)
+    // trigger int1 on falling edge (button press)
     IT0 = true;
     // setting ext int0 priority to low
     PX0L = 0;
     // enabling external interrupt0
     EX0 = true;
+    // trigger int1 on falling edge (button press)
+    IT1 = true;
+    // enabling external interrupt1
+    EX1 = true;
     // enabling all interrupts
     EA = true;
     // start timer0
@@ -68,15 +72,18 @@ void timer_0() interrupt 1 {
             add_element(1);
         }
         reset_timer0();
-    } else if (!pressed_flag && !first_run) {
-        waiting = true;
-        // character pause
-        if (milliseconds >= 3 * dit_len) {
-            finish_char();
-        }
+    } else if (!pressed_flag && !first_run && !waiting) {
         // word pause
-        else if (milliseconds >= 7 * dit_len) {
-            LCD_string("*");
+        if (milliseconds >= 7 * dit_len) {
+            LCD_string(" ");
+            waiting = true;
+        }
+        // character pause
+        else if (milliseconds >= 3 * dit_len) {
+            finish_char();
         }
     }
 }
+
+// triggers on falling edge (button press)
+void ext_int_1() interrupt 2 { clear_LCD(); }

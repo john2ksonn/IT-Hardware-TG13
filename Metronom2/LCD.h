@@ -1,7 +1,7 @@
 #ifndef _LCD_H_
 #define _LCD_H_
 
-#include <at89c5131.h>
+#include "at89c5131.h"
 
 #define LCD_Port P1
 
